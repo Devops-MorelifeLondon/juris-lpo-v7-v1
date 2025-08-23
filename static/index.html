@@ -54,6 +54,21 @@
         [animate-txt] {
             perspective: 300px;
         }
+
+          .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .active-tab {
+            background-color: black !important;
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+            border: 1px solid var(--swatch--shade-light-10);
+    border-radius: var(--radius--xs);
+        }
     </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-883994GCD3"></script>
@@ -1074,7 +1089,7 @@
             </div>
         </div>
         <main class="page_main">
-            <header class="nav">
+            <header class="">
                 <div class="nav_container container">
                     <div class="nav-content_wrapper nav-logo-wrapper"><a
                             data-w-id="3dad01ab-7e4c-e1b3-0607-3b97c11337d5" href="/" aria-current="page"
@@ -1282,48 +1297,41 @@
                 </div>
             </section>
 
-            <section id="services" class="py-14 bg-[#cbff54]">
-                <div class="max-w-6xl mx-auto px-6 text-center">
-                    <h2 style="color: black;" class="text-2xl md:text-3xl font-bold mb-6 text-black">
-                        Delegate the Tiny Tasks. Win Back Billable Hours.
-                    </h2>
-                    <xs class="text-slate-800 max-w-3xl mx-auto">
-                        Choose your practice area. We'll take the repetitive drafting, filing, and research off your
-                        plate — with secure U.S./India delivery options.
-                    </xs
+       <section id="services" class="py-14 bg-[#cbff54]">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-black">
+                Delegate the Tiny Tasks. Win Back Billable Hours.
+            </h2>
+            <p class="text-slate-800 max-w-3xl mx-auto mb-6">
+                Choose your practice area. We'll take the repetitive drafting, filing, and research off your
+                plate — with secure U.S./India delivery options.
+            </p>
 
-                    <!-- Selection Buttons -->
-                    <div class="mt-8 flex flex-wrap justify-center gap-3">
-                        <button onclick="showPanel('family')"
-                            class="px-4 py-2 rounded-full bg-black text-white text-xs font-medium uppercase hover:bg-gray-800 tracking-widest 
-                            ">Family
-                            Law</button>
-                        <button onclick="showPanel('pi')"
-                            class="px-4 py-2 rounded-full bg-black text-white text-xs font-medium uppercase hover:bg-gray-800 tracking-widest">Personal
-                            Injury</button>
-                        <button onclick="showPanel('re')"
-                            class="px-4 py-2 rounded-full bg-black text-white text-xs font-medium uppercase hover:bg-gray-800 tracking-widest">Real
-                            Estate</button>
-                        <button onclick="showPanel('estate')"
-                            class="px-4 py-2 rounded-full bg-black text-white text-xs font-medium uppercase hover:bg-gray-800 tracking-widest">Estate
-                            Planning</button>
-                        <button onclick="showPanel('ip')"
-                            class="px-4 py-2 rounded-full bg-black text-white text-xs font-medium uppercase hover:bg-gray-800 tracking-widest">Intellectual
-                            Property</button>
-                        <button onclick="showPanel('biz')"
-                            class="px-4 py-2 rounded-full bg-black text-white text-xs font-medium uppercase hover:bg-gray-800 tracking-widest">Business
-                            Law</button>
-                    </div>
+            <!-- Selection Buttons -->
+            <div class="mt-8 flex flex-wrap justify-center gap-3">
+                <button onclick="showPanel('family')"
+                    class="px-4 py-2 rounded-sm bg-[#112220cc] text-white text-xs font-medium uppercase hover:bg-gray-800 tracking-widest active-tab">Family Law</button>
+                <button onclick="showPanel('pi')"
+                    class="px-4 py-2 rounded-sm bg-[#112220cc] text-white text-xs font-medium uppercase hover:bg-gray-800 tracking-widest">Personal Injury</button>
+                <button onclick="showPanel('re')"
+                    class="px-4 py-2 rounded-sm bg-[#112220cc] text-white text-xs font-medium uppercase hover:bg-gray-800 tracking-widest">Real Estate</button>
+                <button onclick="showPanel('estate')"
+                    class="px-4 py-2 rounded-sm bg-[#112220cc] text-white text-xs font-medium uppercase hover:bg-gray-800 tracking-widest">Estate Planning</button>
+                <button onclick="showPanel('ip')"
+                    class="px-4 py-2 rounded-sm bg-[#112220cc] text-white text-xs font-medium uppercase hover:bg-gray-800 tracking-widest">Intellectual Property</button>
+                <button onclick="showPanel('biz')"
+                    class="px-4 py-2 rounded-sm bg-[#112220cc] text-white text-xs font-medium uppercase hover:bg-gray-800 tracking-widest">Business Law</button>
+            </div>
 
-                    <!-- Content Panels -->
-                    <div class="mt-10 space-y-6 text-left">
+            <!-- Content Panels -->
+            <div class="mt-10 space-y-6 text-left">
 
-                        <!-- Family Law -->
-                        <div id="panel-family" class="hidden bg-black text-white p-8 rounded-xl">
-                            <h3 class="text-xl font-bold mb-3">Family Law — we handle the forms while you handle the
-                                people.</h3>
-                            <p class="mb-4 text-slate-200">Tiny tasks your team shouldn't be doing — done fast,
-                                consistently, and court-style compliant.</p>
+                <!-- Family Law -->
+                <div id="panel-family" class="bg-black text-white p-8 rounded-xl fade-in">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="text-xl font-bold mb-3">Family Law — we handle the forms while you handle the people.</h3>
+                            <p class="mb-4 text-slate-200">Tiny tasks your team shouldn't be doing — done fast, consistently, and court-style compliant.</p>
                             <ul class="list-disc pl-6 space-y-2">
                                 <li>Draft initial divorce petitions & custody motions</li>
                                 <li>Prepare financial affidavits & disclosure summaries</li>
@@ -1333,23 +1341,26 @@
                             </ul>
                             <div class="mt-6 flex flex-wrap gap-3">
                                 <a href="#cta"
-                                    class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs hover:bg-lime-300 uppercase">Book
-                                    a Free Strategy Call</a>
+                                    class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs hover:bg-lime-300 uppercase">Book a Free Strategy Call</a>
                                 <a href="#bundles"
-                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs uppercase  hover:bg-[#cbff54] hover:text-black">View
-                                    Family Law Bundle</a>
+                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs uppercase hover:bg-[#cbff54] hover:text-black">View Family Law Bundle</a>
                                 <a href="#bundles"
-                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs uppercase hover:bg-[#cbff54] hover:text-black">Buy
-                                    Now</a>
+                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs uppercase hover:bg-[#cbff54] hover:text-black">Buy Now</a>
                             </div>
                         </div>
+                        <div>
+                            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                                 alt="Family Law" class="rounded-lg shadow-lg">
+                        </div>
+                    </div>
+                </div>
 
-                        <!-- Personal Injury -->
-                        <div id="panel-pi" class="hidden bg-black text-white p-8 rounded-xl">
-                            <h3 class="text-xl font-bold mb-3">Personal Injury — we do the legwork that strengthens your
-                                demands.</h3>
-                            <p class="mb-4 text-slate-200">Get clean packages, fast: medical summaries, demand letters,
-                                discovery.</p>
+                <!-- Personal Injury -->
+                <div id="panel-pi" class="hidden bg-black text-white p-8 rounded-xl">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="text-xl font-bold mb-3">Personal Injury — we do the legwork that strengthens your demands.</h3>
+                            <p class="mb-4 text-slate-200">Get clean packages, fast: medical summaries, demand letters, discovery.</p>
                             <ul class="list-disc pl-6 space-y-2">
                                 <li>Retrieve, index & summarize medical records</li>
                                 <li>Draft insurer demand letters</li>
@@ -1359,49 +1370,55 @@
                             </ul>
                             <div class="mt-6 flex flex-wrap gap-3">
                                 <a href="#cta"
-                                    class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs hover:bg-lime-300">Start
-                                    a PI Trial Task</a>
+                                    class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs hover:bg-lime-300">Start a PI Trial Task</a>
                                 <a href="#bundles"
-                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">View
-                                    PI Bundle</a>
+                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">View PI Bundle</a>
                                 <a href="#bundles"
-                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">Buy
-                                    Now</a>
+                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">Buy Now</a>
                             </div>
                         </div>
+                        <div>
+                            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1400&auto=format&fit=crop" 
+                                 alt="Personal Injury Law" class="rounded-lg shadow-lg">
+                        </div>
+                    </div>
+                </div>
 
-                        <!-- Real Estate -->
-                        <div id="panel-re" class="hidden bg-black text-white p-8 rounded-xl">
-                            <h3 class="text-xl font-bold mb-3">Real Estate — from contracts to closings without the
-                                boilerplate grind.</h3>
-                            <p class="mb-4 text-slate-200">We prep, summarize, abstract and checklist the details so you
-                                can close faster.</p>
+                <!-- Real Estate -->
+                <div id="panel-re" class="hidden bg-black text-white p-8 rounded-xl">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="text-xl font-bold mb-3">Real Estate — from contracts to closings without the boilerplate grind.</h3>
+                            <p class="mb-4 text-slate-200">We prep, summarize, abstract and checklist the details so you can close faster.</p>
                             <ul class="list-disc pl-6 space-y-2">
                                 <li>Draft/review leases & addendums</li>
                                 <li>Title search summaries</li>
                                 <li>Closing document preparation</li>
                                 <li>Escrow instructions & checklists</li>
-                                <li>Recording deeds coortext-xs
+                                <li>Recording deeds coordination</li>
                             </ul>
                             <div class="mt-6 flex flex-wrap gap-3">
                                 <a href="#cta"
-                                    class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs hover:bg-lime-300">Request
-                                    a Lease Abstraction</a>
+                                    class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs hover:bg-lime-300">Request a Lease Abstraction</a>
                                 <a href="#bundles"
-                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">View
-                                    Real Estate Bundle</a>
+                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">View Real Estate Bundle</a>
                                 <a href="#bundles"
-                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">Buy
-                                    Now</a>
+                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">Buy Now</a>
                             </div>
                         </div>
+                        <div>
+                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1373&q=80" 
+                                 alt="Real Estate Law" class="rounded-lg shadow-lg">
+                        </div>
+                    </div>
+                </div>
 
-                        <!-- Estate Planning -->
-                        <div id="panel-estate" class="hidden bg-black text-white p-8 rounded-xl">
-                            <h3 class="text-xl font-bold mb-3">Estate Planning — perfect packages, zero reformatting
-                                headaches.</h3>
-                            <p class="mb-4 text-slate-200">We assemble, proof and file the document sets that protect
-                                your clients' legacies.</p>
+                <!-- Estate Planning -->
+                <div id="panel-estate" class="hidden bg-black text-white p-8 rounded-xl">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="text-xl font-bold mb-3">Estate Planning — perfect packages, zero reformatting headaches.</h3>
+                            <p class="mb-4 text-slate-200">We assemble, proof and file the document sets that protect your clients' legacies.</p>
                             <ul class="list-disc pl-6 space-y-2">
                                 <li>Draft wills, trusts & POA templates</li>
                                 <li>Organize asset inventories</li>
@@ -1411,49 +1428,55 @@
                             </ul>
                             <div class="mt-6 flex flex-wrap gap-3">
                                 <a href="#cta"
-                                    class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs hover:bg-lime-300">Start
-                                    an Estate Plan Packet</a>
+                                    class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs hover:bg-lime-300">Start an Estate Plan Packet</a>
                                 <a href="#bundles"
-                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">View
-                                    Estate Bundle</a>
+                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">View Estate Bundle</a>
                                 <a href="#bundles"
-                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">Buy
-                                    Now</a>
+                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">Buy Now</a>
                             </div>
                         </div>
+                        <div>
+                            <img src="https://www.lobbplewe.com/wp-content/uploads/2022/10/What-Are-the-Main-Steps-in-Estate-Planning.jpeg" 
+                                 alt="Estate Planning" class="rounded-lg shadow-lg">
+                        </div>
+                    </div>
+                </div>
 
-                        <!-- Intellectual Property -->
-                        <div id="panel-ip" class="hidden bg-black text-white p-8 rounded-xl">
-                            <h3 class="text-xl font-bold mb-3">Intellectual Property — filings, dockets, and deadlines
-                                handled.</h3>
-                            <p class="mb-4 text-slate-200">We keep the paperwork moving so you can focus on strategy &
-                                prosecution.</p>
+                <!-- Intellectual Property -->
+                <div id="panel-ip" class="hidden bg-black text-white p-8 rounded-xl">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="text-xl font-bold mb-3">Intellectual Property — filings, dockets, and deadlines handled.</h3>
+                            <p class="mb-4 text-slate-200">We keep the paperwork moving so you can focus on strategy & prosecution.</p>
                             <ul class="list-disc pl-6 space-y-2">
                                 <li>Trademark searches & application drafting</li>
                                 <li>Draft office action response shells</li>
                                 <li>IP docket/calendar maintenance</li>
                                 <li>Patent filing forms & checklists</li>
-                                <li>Licensing templates & 
+                                <li>Licensing templates & renewals</li>
                             </ul>
                             <div class="mt-6 flex flex-wrap gap-3">
                                 <a href="#cta"
-                                    class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs hover:bg-lime-300">Request
-                                    a TM Search Report</a>
+                                    class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs hover:bg-lime-300">Request a TM Search Report</a>
                                 <a href="#bundles"
-                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">View
-                                    IP Bundle</a>
+                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">View IP Bundle</a>
                                 <a href="#bundles"
-                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">Buy
-                                    Now</a>
+                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">Buy Now</a>
                             </div>
                         </div>
+                        <div>
+                            <img src="https://www.clio.com/wp-content/uploads/2017/04/IP-Docketing-01.png" 
+                                 alt="Intellectual Property Law" class="rounded-lg shadow-lg">
+                        </div>
+                    </div>
+                </div>
 
-                        <!-- Business Law -->
-                        <div id="panel-biz" class="hidden bg-black text-white p-8 rounded-xl">
-                            <h3 class="text-xl font-bold mb-3">Business Law — documentation that keeps deals moving.
-                            </h3>
-                            <p class="mb-4 text-slate-200">From NDAs to board minutes, get drafts and checklists on
-                                autopilot.</p>
+                <!-- Business Law -->
+                <div id="panel-biz" class="hidden bg-black text-white p-8 rounded-xl">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="text-xl font-bold mb-3">Business Law — documentation that keeps deals moving.</h3>
+                            <p class="mb-4 text-slate-200">From NDAs to board minutes, get drafts and checklists on autopilot.</p>
                             <ul class="list-disc pl-6 space-y-2">
                                 <li>Draft NDAs, employment & vendor agreements</li>
                                 <li>Compliance calendars & state filings</li>
@@ -1464,29 +1487,52 @@
                             </ul>
                             <div class="mt-6 flex flex-wrap gap-3">
                                 <a href="#cta"
-                                    class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs  hover:bg-lime-300">Book
-                                    a Free Strategy Call</a>
+                                    class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs hover:bg-lime-300">Book a Free Strategy Call</a>
                                 <a href="#bundles"
-                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs  hover:bg-[#cbff54] hover:text-black">View
-                                    Business Law Bundle</a>
+                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">View Business Law Bundle</a>
                                 <a href="#bundles"
-                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs  hover:bg-[#cbff54] hover:text-black">Buy
-                                    Now</a>
+                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">Buy Now</a>
                             </div>
+                        </div>
+                        <div>
+                            <img src="https://images.unsplash.com/photo-1560264418-c4445382edbc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                                 alt="Business Law" class="rounded-lg shadow-lg">
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </div>
+    </section>
 
-            <script>
-                function showPanel(id) {
-                    document.querySelectorAll('[id^="panel-"]').forEach(el => el.classList.add("hidden"))
-                    document.getElementById("panel-" + id).classList.remove("hidden")
-                }
-                // Show Family Law by default
-                showPanel("family")
-            </script>
-
+    <script>
+        function showPanel(id) {
+            // Hide all panels
+            document.querySelectorAll('[id^="panel-"]').forEach(el => {
+                el.classList.add("hidden");
+                el.classList.remove("fade-in");
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('button').forEach(btn => {
+                btn.classList.remove("active-tab");
+            });
+            
+            // Show selected panel with animation
+            const panel = document.getElementById("panel-" + id);
+            panel.classList.remove("hidden");
+            setTimeout(() => {
+                panel.classList.add("fade-in");
+            }, 10);
+            
+            // Add active class to clicked button
+            event.target.classList.add("active-tab");
+        }
+        
+        // Show Family Law by default
+        document.addEventListener('DOMContentLoaded', function() {
+            showPanel('family');
+        });
+    </script>
            
 
         
