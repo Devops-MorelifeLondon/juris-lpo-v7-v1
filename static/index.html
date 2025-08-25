@@ -6,7 +6,13 @@
     <title>JurisLPO</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <link href="https://cdn.prod.website-files.com/6682c9c59628a8235eba2fe6/css/theresonance.shared.69a8cdb3f.css"
         rel="stylesheet" type="text/css" />
@@ -55,21 +61,32 @@
             perspective: 300px;
         }
 
-          .fade-in {
+        .fade-in {
             animation: fadeIn 0.5s ease-in-out;
         }
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
         .active-tab {
             background-color: black !important;
             transform: scale(1.05);
             transition: all 0.3s ease;
             border: 1px solid var(--swatch--shade-light-10);
-    border-radius: var(--radius--xs);
+            border-radius: var(--radius--xs);
         }
     </style>
+
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-883994GCD3"></script>
     <script>
@@ -233,12 +250,25 @@
         </div>
         <div class="global-code">
             <div class="global-styles_utility w-embed">
+                
                 <style>
                     /* Global Styles */
+
+                    .oswald-font {
+                        font-family: "Oswald", sans-serif;
+                        font-optical-sizing: auto;
+                        font-weight: 500;
+                        font-style: normal;
+                    }
+
                     body {
                         overscroll-behavior: none;
                         font-smoothing: antialiased;
                         -webkit-font-smoothing: antialiased;
+                          font-family: "Poppins", sans-serif !important;
+  font-weight: 400;
+  font-style: normal;
+                        
                     }
 
                     /* Hide Scroll Bar */
@@ -263,12 +293,18 @@
                         text-underline-position: under;
                         text-decoration-thickness: 0.1em;
                         text-underline-offset: 0.05em;
+                         font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
                     }
 
                     button {
                         background-color: unset;
                         padding: unset;
                         text-align: inherit;
+                         font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
                     }
 
                     img::selection {
@@ -612,15 +648,16 @@
                     /* typography */
                     h1 {
                         line-height: var(--line-height--sm);
-                        font-family: var(--heading-3xl--font-family);
+                       
                         font-weight: var(--heading-3xl--font-weight);
                         text-transform: var(--heading-3xl--text-transform);
                         font-size: var(--heading-3xl--font-size);
+                        
                     }
 
                     h2 {
                         line-height: var(--line-height--sm);
-                        font-family: var(--heading-2xl--font-family);
+                       
                         font-weight: var(--heading-2xl--font-weight);
                         text-transform: var(--heading-2xl--text-transform);
                         font-size: var(--heading-2xl--font-size);
@@ -628,7 +665,7 @@
 
                     h3 {
                         line-height: var(--line-height--sm);
-                        font-family: var(--heading-xl--font-family);
+                       
                         font-weight: var(--heading-xl--font-weight);
                         text-transform: var(--heading-xl--text-transform);
                         font-size: var(--heading-xl--font-size);
@@ -636,7 +673,7 @@
 
                     h4 {
                         line-height: var(--line-height--sm);
-                        font-family: var(--heading-lg--font-family);
+                      
                         font-weight: var(--heading-lg--font-weight);
                         text-transform: var(--heading-lg--text-transform);
                         font-size: var(--heading-lg--font-size);
@@ -644,7 +681,7 @@
 
                     h5 {
                         line-height: var(--line-height--sm);
-                        font-family: var(--heading-md--font-family);
+                       
                         font-weight: var(--heading-md--font-weight);
                         text-transform: var(--heading-md--text-transform);
                         font-size: var(--heading-md--font-size);
@@ -652,7 +689,7 @@
 
                     h6 {
                         line-height: var(--line-height--sm);
-                        font-family: var(--heading-sm--font-family);
+                       
                         font-weight: var(--heading-sm--font-weight);
                         text-transform: var(--heading-sm--text-transform);
                         font-size: var(--heading-sm--font-size);
@@ -666,7 +703,7 @@
                     :is(c, :where([class*="hl-display"], [heading="display"])) {
                         font-size: var(--heading-display--font-size);
                         line-height: var(--heading-display--line-height);
-                        font-family: var(--heading-display--font-family);
+                     
                         font-weight: var(--heading-display--font-weight);
                         letter-spacing: var(--heading-display--letter-spacing);
                         text-transform: var(--heading-display--text-transform);
@@ -676,7 +713,7 @@
                     :is(c, :where([class*="hl-4xl"], [heading="4xl"])) {
                         font-size: var(--heading-4xl--font-size);
                         line-height: var(--heading-4xl--line-height);
-                        font-family: var(--heading-4xl--font-family);
+                      
                         font-weight: var(--heading-4xl--font-weight);
                         letter-spacing: var(--heading-4xl--letter-spacing);
                         text-transform: var(--heading-4xl--text-transform);
@@ -686,7 +723,7 @@
                     :is(c, :where([class*="hl-3xl"], [heading="3xl"])) {
                         font-size: var(--heading-3xl--font-size);
                         line-height: var(--heading-3xl--line-height);
-                        font-family: var(--heading-3xl--font-family);
+                      
                         font-weight: var(--heading-3xl--font-weight);
                         letter-spacing: var(--heading-3xl--letter-spacing);
                         text-transform: var(--heading-3xl--text-transform);
@@ -696,7 +733,7 @@
                     :is(c, :where([class*="hl-2xl"], [heading="2xl"])) {
                         font-size: var(--heading-2xl--font-size);
                         line-height: var(--heading-2xl--line-height);
-                        font-family: var(--heading-2xl--font-family);
+                       
                         font-weight: var(--heading-2xl--font-weight);
                         letter-spacing: var(--heading-2xl--letter-spacing);
                         text-transform: var(--heading-2xl--text-transform);
@@ -706,7 +743,7 @@
                     :is(c, :where([class*="hl-xl"], [heading="xl"])) {
                         font-size: var(--heading-xl--font-size);
                         line-height: var(--heading-xl--line-height);
-                        font-family: var(--heading-xl--font-family);
+                       
                         font-weight: var(--heading-xl--font-weight);
                         letter-spacing: var(--heading-xl--letter-spacing);
                         text-transform: var(--heading-xl--text-transform);
@@ -716,7 +753,7 @@
                     :is(c, :where([class*="hl-lg"], [heading="lg"])) {
                         font-size: var(--heading-lg--font-size);
                         line-height: var(--heading-lg--line-height);
-                        font-family: var(--heading-lg--font-family);
+                      
                         font-weight: var(--heading-lg--font-weight);
                         letter-spacing: var(--heading-lg--letter-spacing);
                         text-transform: var(--heading-lg--text-transform);
@@ -726,7 +763,7 @@
                     :is(c, :where([class*="hl-md"], [heading="md"])) {
                         font-size: var(--heading-md--font-size);
                         line-height: var(--heading-md--line-height);
-                        font-family: var(--heading-md--font-family);
+                       
                         font-weight: var(--heading-md--font-weight);
                         letter-spacing: var(--heading-md--letter-spacing);
                         text-transform: var(--heading-md--text-transform);
@@ -736,7 +773,7 @@
                     :is(c, :where([class*="hl-sm"], [heading="sm"])) {
                         font-size: var(--heading-sm--font-size);
                         line-height: var(--heading-sm--line-height);
-                        font-family: var(--heading-sm--font-family);
+                        
                         font-weight: var(--heading-sm--font-weight);
                         letter-spacing: var(--heading-sm--letter-spacing);
                         text-transform: var(--heading-sm--text-transform);
@@ -746,7 +783,7 @@
                     :is(c, :where([class*="hl-xs"], [heading="xs"])) {
                         font-size: var(--heading-xs--font-size);
                         line-height: var(--heading-xs--line-height);
-                        font-family: var(--heading-xs--font-family);
+                       
                         font-weight: var(--heading-xs--font-weight);
                         letter-spacing: var(--heading-xs--letter-spacing);
                         text-transform: var(--heading-xs--text-transform);
@@ -756,7 +793,7 @@
                     :is(c, :where([class*="pg-lg"], [paragraph="lg"])) {
                         font-size: var(--paragraph-lg--font-size);
                         line-height: var(--paragraph-lg--line-height);
-                        font-family: var(--paragraph-lg--font-family);
+                     
                         font-weight: var(--paragraph-lg--font-weight);
                         letter-spacing: var(--paragraph-lg--letter-spacing);
                     }
@@ -764,7 +801,7 @@
                     :is(c, :where([class*="pg-base"], [paragraph="base"])) {
                         font-size: 1rem;
                         line-height: var(--paragraph-sm--line-height);
-                        font-family: var(--paragraph-sm--font-family);
+                       
                         font-weight: var(--paragraph-sm--font-weight);
                         letter-spacing: var(--paragraph-sm--letter-spacing);
                     }
@@ -772,7 +809,7 @@
                     :is(c, :where([class*="pg-sm"], [paragraph="sm"])) {
                         font-size: var(--paragraph-sm--font-size);
                         line-height: var(--paragraph-sm--line-height);
-                        font-family: var(--paragraph-sm--font-family);
+                      
                         font-weight: var(--paragraph-sm--font-weight);
                         letter-spacing: var(--paragraph-sm--letter-spacing);
                     }
@@ -780,13 +817,13 @@
                     :is(c, :where([class*="pg-xs"], [paragraph="xs"])) {
                         font-size: var(--paragraph-xs--font-size);
                         line-height: var(--paragraph-xs--line-height);
-                        font-family: var(--paragraph-xs--font-family);
+                      
                         font-weight: var(--paragraph-xs--font-weight);
                         letter-spacing: var(--paragraph-xs--letter-spacing);
                     }
 
                     .fontapply {
-                        font-family: var(--heading-3xl--font-family);
+                       
                     }
                 </style>
             </div>
@@ -1104,33 +1141,33 @@
                                 <div class="menu-dropdown_wrapper"><button aria-label="dropdown button"
                                         data-button-color="" id="" class="btn-animate-chars navigation-link">
                                         <div class="btn-animate-chars__bg navigation-link"></div><span
-                                            data-button-animate-chars="" class="btn-animate-chars__text">Drop</span>
+                                            data-button-animate-chars="" class="btn-animate-chars__text" style="font-family: Poppins;">Drop</span>
                                     </button>
 
                                 </div><a data-button-color="" aria-label="staggering button" href="/ai-upskilling"
                                     class="btn-animate-chars navigation-link w-inline-block">
                                     <div class="btn-animate-chars__bg navigation-link"></div><span
-                                        data-button-animate-chars="" class="btn-animate-chars__text">Train</span>
+                                        data-button-animate-chars="" class="btn-animate-chars__text" style="font-family: Poppins;">Train</span>
                                 </a><a data-button-color="" aria-label="staggering button" href="/thoughts"
                                     class="btn-animate-chars navigation-link w-inline-block">
                                     <div class="btn-animate-chars__bg navigation-link"></div><span
-                                        data-button-animate-chars="" class="btn-animate-chars__text">Pricing</span>
+                                        data-button-animate-chars="" class="btn-animate-chars__text" style="font-family: Poppins;">Pricing</span>
                                 </a>
                                 </a><a data-button-color="" aria-label="staggering button" href="/thoughts"
                                     class="btn-animate-chars navigation-link w-inline-block">
                                     <div class="btn-animate-chars__bg navigation-link"></div><span
-                                        data-button-animate-chars="" class="btn-animate-chars__text">Setup</span>
+                                        data-button-animate-chars="" class="btn-animate-chars__text" style="font-family: Poppins;">Setup</span>
                                 </a>
                                 </a><a data-button-color="" aria-label="staggering button" href="/thoughts"
                                     class="btn-animate-chars navigation-link w-inline-block">
                                     <div class="btn-animate-chars__bg navigation-link"></div><span
-                                        data-button-animate-chars="" class="btn-animate-chars__text">Tools</span>
+                                        data-button-animate-chars="" class="btn-animate-chars__text" style="font-family: Poppins;">Tools</span>
                                 </a>
                             </nav>
                             <a data-button-color="" aria-label="staggering button" href="#services"
                                 class="btn-animate-chars nav-btn w-inline-block">
                                 <div class="btn-animate-chars__bg nav-btn"></div>
-                               <span data-button-animate-chars="" class="btn-animate-chars__text nav-btn">Explore Services</span>
+                                <span data-button-animate-chars="" class="btn-animate-chars__text nav-btn" style="font-family: 'Poppins'; ">Explore Services</span>
 
 
 
@@ -1138,9 +1175,9 @@
                             <a data-button-color="" aria-label="staggering button" href="#"
                                 class="btn-animate-chars nav-btn w-inline-block">
                                 <div class="btn-animate-chars__bg nav-btn"></div>
-                                <span data-button-animate-chars="" class="btn-animate-chars__text nav-btn">Browse Talent</span>
+                                <span data-button-animate-chars="" class="btn-animate-chars__text nav-btn" style="font-family: Poppins; " onclick="openTalentBrowser()">Browse Talent</span>
                             </a>
-                          
+
                             <div class="menu-grid">
                                 <div id="w-node-_3dad01ab-7e4c-e1b3-0607-3b97c1133812-c11337d2"
                                     class="section-grid_col">
@@ -1200,7 +1237,7 @@
                                     <div>Practice</div>
                                 </div>
                             </h1>
-                            <p animate-txt="lines-fade-in" paragraph="lg">USA-crafted legal and financial solutions
+                            <p animate-txt="lines-fade-in" paragraph="lg" style="font-family: Lato;">USA-crafted legal and financial solutions
                                 powered by expert paralegals, virtual assistants, and bookkeepers, delivered
                                 cost-effectively from India or premium from the USA.</p>
                         </div>
@@ -1273,10 +1310,12 @@
                 <div class="overflow-hidden">
                     <div class="flex whitespace-nowrap animate-marquee ">
                         <!-- Items duplicated for smooth loop -->
-                        <div class="mx-4 flex-shrink-0 px-4 py-2 bg-[#cbff54]  text-black text-2xl font-medium fontapply">
+                        <div
+                            class="mx-4 flex-shrink-0 px-4 py-2 bg-[#cbff54]  text-black text-2xl font-medium fontapply">
                             ⚖️ Tailored for USA Attorneys &amp; CPAs
                         </div>
-                        <div class="mx-4 flex-shrink-0 px-4 py-2 bg-[#cbff54]  text-black text-2xl font-medium fontapply">
+                        <div
+                            class="mx-4 flex-shrink-0 px-4 py-2 bg-[#cbff54]  text-black text-2xl font-medium fontapply">
                             📍 Delivery Hubs: Texas • California • Illinois • Nevada (USA)
                         </div>
                         <div class="mx-4 flex-shrink-0 px-4 py-2 bg-[#cbff54]  text-black text-2xl font-medium">
@@ -1297,245 +1336,1575 @@
                 </div>
             </section>
 
-       <section id="services" class="py-14 bg-[#cbff54]">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-black">
-                Delegate the Tiny Tasks. Win Back Billable Hours.
-            </h2>
-            <p class="text-slate-800 max-w-3xl mx-auto mb-6">
-                Choose your practice area. We'll take the repetitive drafting, filing, and research off your
-                plate — with secure U.S./India delivery options.
-            </p>
+            <section id="services" class="py-14 bg-[#cbff54]">
+                <div class="max-w-7xl mx-auto px-6 text-center">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-6 text-black">
+                        Delegate the Tiny Tasks. Win Back Billable Hours.
+                    </h2>
+                    <p class="text-slate-800 max-w-3xl mx-auto mb-6">
+                        Choose your practice area. We'll take the repetitive drafting, filing, and research off your
+                        plate — with secure U.S./India delivery options.
+                    </p>
 
-            <!-- Selection Buttons -->
-            <div class="mt-8 flex flex-wrap justify-center gap-3">
-                <button onclick="showPanel('family')"
-                    class="px-4 py-2 rounded-sm bg-[#112220cc] text-white text-xs font-medium uppercase hover:bg-gray-800 tracking-widest active-tab">Family Law</button>
-                <button onclick="showPanel('pi')"
-                    class="px-4 py-2 rounded-sm bg-[#112220cc] text-white text-xs font-medium uppercase hover:bg-gray-800 tracking-widest">Personal Injury</button>
-                <button onclick="showPanel('re')"
-                    class="px-4 py-2 rounded-sm bg-[#112220cc] text-white text-xs font-medium uppercase hover:bg-gray-800 tracking-widest">Real Estate</button>
-                <button onclick="showPanel('estate')"
-                    class="px-4 py-2 rounded-sm bg-[#112220cc] text-white text-xs font-medium uppercase hover:bg-gray-800 tracking-widest">Estate Planning</button>
-                <button onclick="showPanel('ip')"
-                    class="px-4 py-2 rounded-sm bg-[#112220cc] text-white text-xs font-medium uppercase hover:bg-gray-800 tracking-widest">Intellectual Property</button>
-                <button onclick="showPanel('biz')"
-                    class="px-4 py-2 rounded-sm bg-[#112220cc] text-white text-xs font-medium uppercase hover:bg-gray-800 tracking-widest">Business Law</button>
-            </div>
+                    <!-- Selection Buttons -->
 
-            <!-- Content Panels -->
-            <div class="mt-10 space-y-6 text-left">
+                    <!-- Selection Buttons -->
+                    <div class="mt-8 flex flex-wrap justify-center gap-3">
+                        <button onclick="showPanel('family')"
+                            class="px-4 py-2 rounded-sm bg-[#112220cc] text-white text-xs font-semibold  uppercase hover:bg-gray-800 tracking-widest active-tab">
+                            Family Law
+                        </button>
+                        <button onclick="showPanel('pi')"
+                            class="px-4 py-2 rounded-sm bg-[#112220cc] text-white text-xs font-semibold  uppercase hover:bg-gray-800 tracking-widest">
+                            Personal Injury
+                        </button>
+                        <button onclick="showPanel('re')"
+                            class="px-4 py-2 rounded-sm bg-[#112220cc] text-white text-xs font-semibold  uppercase hover:bg-gray-800 tracking-widest">
+                            Real Estate
+                        </button>
+                        <button onclick="showPanel('estate')"
+                            class="px-4 py-2 rounded-sm bg-[#112220cc] text-white text-xs font-semibold  uppercase hover:bg-gray-800 tracking-widest">
+                            Estate Planning
+                        </button>
+                        <button onclick="showPanel('ip')"
+                            class="px-4 py-2 rounded-sm bg-[#112220cc] text-white text-xs font-semibold  uppercase hover:bg-gray-800 tracking-widest">
+                            Intellectual Property
+                        </button>
+                        <button onclick="showPanel('biz')"
+                            class="px-4 py-2 rounded-sm bg-[#112220cc] text-white text-xs font-semibold  uppercase hover:bg-gray-800 tracking-widest">
+                            Business Law
+                        </button>
 
-                <!-- Family Law -->
-                <div id="panel-family" class="bg-black text-white p-8 rounded-xl fade-in">
-                    <div class="grid md:grid-cols-2 gap-8 items-center">
-                        <div>
-                            <h3 class="text-xl font-bold mb-3">Family Law — we handle the forms while you handle the people.</h3>
-                            <p class="mb-4 text-slate-200">Tiny tasks your team shouldn't be doing — done fast, consistently, and court-style compliant.</p>
-                            <ul class="list-disc pl-6 space-y-2">
-                                <li>Draft initial divorce petitions & custody motions</li>
-                                <li>Prepare financial affidavits & disclosure summaries</li>
-                                <li>Organize discovery docs; build case chronology</li>
-                                <li>Schedule depositions, mediation & hearing calendars</li>
-                                <li>Draft child support calculation sheets</li>
-                            </ul>
-                            <div class="mt-6 flex flex-wrap gap-3">
-                                <a href="#cta"
-                                    class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs hover:bg-lime-300 uppercase">Book a Free Strategy Call</a>
-                                <a href="#bundles"
-                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs uppercase hover:bg-[#cbff54] hover:text-black">View Family Law Bundle</a>
-                                <a href="#bundles"
-                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs uppercase hover:bg-[#cbff54] hover:text-black">Buy Now</a>
+                        <!-- NEW BUTTONS -->
+                        <button onclick="showPanel('immigration')"
+                            class="px-4 py-2 rounded-sm bg-[#112220cc] text-white text-xs font-semibold  uppercase hover:bg-gray-800 tracking-widest">
+                            Immigration
+                        </button>
+                        <button onclick="showPanel('accounting')"
+                            class="px-4 py-2 rounded-sm bg-[#112220cc] text-white text-xs font-semibold  uppercase hover:bg-gray-800 tracking-widest">
+                            Accounting
+                        </button>
+                        <button onclick="showPanel('bookkeeping')"
+                            class="px-4 py-2 rounded-sm bg-[#112220cc] text-white text-xs font-semibold uppercase hover:bg-gray-800 tracking-widest">
+                            Bookkeeping
+                        </button>
+                        <button onclick="showPanel('tax')"
+                            class="px-4 py-2 rounded-sm bg-[#112220cc] text-white text-xs font-semibold uppercase hover:bg-gray-800 tracking-widest">
+                            Tax Preparation
+                        </button>
+                    </div>
+                    <!-- Content Panels -->
+                    <div class="mt-10 space-y-6 text-left bg-[#112220]">
+
+                        <!-- Family Law -->
+                        <div id="panel-family" class="bg-black text-white p-8 rounded-xl fade-in">
+                            <div class="grid md:grid-cols-2 gap-8 items-center">
+                                <div>
+                                    <h3 class="text-xl font-bold mb-3">Family Law — we handle the forms while you handle
+                                        the people.</h3>
+                                    <p class="mb-4 text-slate-200">Tiny tasks your team shouldn't be doing — done fast,
+                                        consistently, and court-style compliant.</p>
+                                    <ul class="list-disc pl-6 space-y-2">
+                                        <li>Draft initial divorce petitions & custody motions</li>
+                                        <li>Prepare financial affidavits & disclosure summaries</li>
+                                        <li>Organize discovery docs; build case chronology</li>
+                                        <li>Schedule depositions, mediation & hearing calendars</li>
+                                        <li>Draft child support calculation sheets</li>
+                                    </ul>
+                                    <div class="mt-6 flex flex-wrap gap-3">
+                                        <a href="#cta"
+                                            class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs hover:bg-lime-300 ">Book
+                                            a Free Strategy Call</a>
+                                        <a onclick="showBundle('family')"
+                                            class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs  hover:bg-[#cbff54] hover:text-black">View
+                                            Family Law Bundle</a>
+                                        <a href="#bundles"
+                                            class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs  hover:bg-[#cbff54] hover:text-black">Buy
+                                            Now</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                        alt="Family Law" class="rounded-lg shadow-lg">
+                                </div>
                             </div>
                         </div>
-                        <div>
-                            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                                 alt="Family Law" class="rounded-lg shadow-lg">
+
+                        <!-- Personal Injury -->
+                        <div id="panel-pi" class="hidden bg-black text-white p-8 rounded-xl">
+                            <div class="grid md:grid-cols-2 gap-8 items-center">
+                                <div>
+                                    <h3 class="text-xl font-bold mb-3">Personal Injury — we do the legwork that
+                                        strengthens your demands.</h3>
+                                    <p class="mb-4 text-slate-200">Get clean packages, fast: medical summaries, demand
+                                        letters, discovery.</p>
+                                    <ul class="list-disc pl-6 space-y-2">
+                                        <li>Retrieve, index & summarize medical records</li>
+                                        <li>Draft insurer demand letters</li>
+                                        <li>Draft standard discovery responses</li>
+                                        <li>Prepare deposition summaries</li>
+                                        <li>Build settlement calculation sheets</li>
+                                    </ul>
+                                    <div class="mt-6 flex flex-wrap gap-3">
+                                        <a href="#cta"
+                                            class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs hover:bg-lime-300">Start
+                                            a PI Trial Task</a>
+                                        <a onclick="showBundle('pi')"
+                                            class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">View
+                                            PI Bundle</a>
+                                        <a href="#bundles"
+                                            class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">Buy
+                                            Now</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1400&auto=format&fit=crop"
+                                        alt="Personal Injury Law" class="rounded-lg shadow-lg">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Real Estate -->
+                        <div id="panel-re" class="hidden bg-black text-white p-8 rounded-xl">
+                            <div class="grid md:grid-cols-2 gap-8 items-center">
+                                <div>
+                                    <h3 class="text-xl font-bold mb-3">Real Estate — from contracts to closings without
+                                        the boilerplate grind.</h3>
+                                    <p class="mb-4 text-slate-200">We prep, summarize, abstract and checklist the
+                                        details so you can close faster.</p>
+                                    <ul class="list-disc pl-6 space-y-2">
+                                        <li>Draft/review leases & addendums</li>
+                                        <li>Title search summaries</li>
+                                        <li>Closing document preparation</li>
+                                        <li>Escrow instructions & checklists</li>
+                                        <li>Recording deeds coordination</li>
+                                    </ul>
+                                    <div class="mt-6 flex flex-wrap gap-3">
+                                        <a href="#cta"
+                                            class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs hover:bg-lime-300">Request
+                                            a Lease Abstraction</a>
+                                         <a onclick="showBundle('re')"
+                                            class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">View
+                                            Real Estate Bundle</a>
+                                        <a href="#bundles"
+                                            class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">Buy
+                                            Now</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1373&q=80"
+                                        alt="Real Estate Law" class="rounded-lg shadow-lg">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Estate Planning -->
+                        <div id="panel-estate" class="hidden bg-black text-white p-8 rounded-xl">
+                            <div class="grid md:grid-cols-2 gap-8 items-center">
+                                <div>
+                                    <h3 class="text-xl font-bold mb-3">Estate Planning — perfect packages, zero
+                                        reformatting headaches.</h3>
+                                    <p class="mb-4 text-slate-200">We assemble, proof and file the document sets that
+                                        protect your clients' legacies.</p>
+                                    <ul class="list-disc pl-6 space-y-2">
+                                        <li>Draft wills, trusts & POA templates</li>
+                                        <li>Organize asset inventories</li>
+                                        <li>Prepare probate court filings</li>
+                                        <li>Beneficiary communications & notices</li>
+                                        <li>Proofread final estate packages</li>
+                                    </ul>
+                                    <div class="mt-6 flex flex-wrap gap-3">
+                                        <a href="#cta"
+                                            class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs hover:bg-lime-300">Start
+                                            an Estate Plan Packet</a>
+                                           <a onclick="showBundle('estate')"
+                                            class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">View
+                                            Estate Bundle</a>
+                                        <a href="#bundles"
+                                            class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">Buy
+                                            Now</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img src="https://www.lobbplewe.com/wp-content/uploads/2022/10/What-Are-the-Main-Steps-in-Estate-Planning.jpeg"
+                                        alt="Estate Planning" class="rounded-lg shadow-lg">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Intellectual Property -->
+                        <div id="panel-ip" class="hidden bg-black text-white p-8 rounded-xl">
+                            <div class="grid md:grid-cols-2 gap-8 items-center">
+                                <div>
+                                    <h3 class="text-xl font-bold mb-3">Intellectual Property — filings, dockets, and
+                                        deadlines handled.</h3>
+                                    <p class="mb-4 text-slate-200">We keep the paperwork moving so you can focus on
+                                        strategy & prosecution.</p>
+                                    <ul class="list-disc pl-6 space-y-2">
+                                        <li>Trademark searches & application drafting</li>
+                                        <li>Draft office action response shells</li>
+                                        <li>IP docket/calendar maintenance</li>
+                                        <li>Patent filing forms & checklists</li>
+                                        <li>Licensing templates & renewals</li>
+                                    </ul>
+                                    <div class="mt-6 flex flex-wrap gap-3">
+                                        <a href="#cta"
+                                            class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs hover:bg-lime-300">Request
+                                            a TM Search Report</a>
+                                        <a onclick="showBundle('ip')"
+                                            class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">View
+                                            IP Bundle</a>
+                                        <a href="#bundles"
+                                            class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">Buy
+                                            Now</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img src="https://www.clio.com/wp-content/uploads/2017/04/IP-Docketing-01.png"
+                                        alt="Intellectual Property Law" class="rounded-lg shadow-lg">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Business Law -->
+                        <div id="panel-biz" class="hidden bg-black text-white p-8 rounded-xl">
+                            <div class="grid md:grid-cols-2 gap-8 items-center">
+                                <div>
+                                    <h3 class="text-xl font-bold mb-3">Business Law — documentation that keeps deals
+                                        moving.</h3>
+                                    <p class="mb-4 text-slate-200">From NDAs to board minutes, get drafts and checklists
+                                        on autopilot.</p>
+                                    <ul class="list-disc pl-6 space-y-2">
+                                        <li>Draft NDAs, employment & vendor agreements</li>
+                                        <li>Compliance calendars & state filings</li>
+                                        <li>Due diligence summaries (M&A)</li>
+                                        <li>Board resolutions & corporate minutes</li>
+                                        <li>Cap table maintenance & shareholder updates</li>
+                                        <li>Draft stock purchase agreements & SAFE notes</li>
+                                    </ul>
+                                    <div class="mt-6 flex flex-wrap gap-3">
+                                        <a href="#cta"
+                                            class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs hover:bg-lime-300">Book
+                                            a Free Strategy Call</a>
+                                          <a onclick="showBundle('biz')"
+                                            class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">View
+                                            Business Law Bundle</a>
+                                        <a href="#bundles"
+                                            class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">Buy
+                                            Now</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img src="https://images.unsplash.com/photo-1560264418-c4445382edbc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                        alt="Business Law" class="rounded-lg shadow-lg">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Immigration -->
+                        <div id="panel-immigration" class="hidden bg-black text-white p-8 rounded-xl">
+                            <div class="grid md:grid-cols-2 gap-8 items-center">
+                                <div>
+                                    <h3 class="text-xl font-bold mb-3">
+                                        Immigration — visas, green cards & compliance without the backlog.
+                                    </h3>
+                                    <p class="mb-4 text-slate-200">
+                                        From applications to employer audits, we handle the forms so you
+                                        can guide the people.
+                                    </p>
+                                    <ul class="list-disc pl-6 space-y-2">
+                                        <li>Visa petitions (H-1B, L-1, O-1, etc.)</li>
+                                        <li>Green card & permanent residency filings</li>
+                                        <li>Citizenship & naturalization forms</li>
+                                        <li>Employer I-9 & compliance support</li>
+                                    </ul>
+                                    <div class="mt-6 flex flex-wrap gap-3">
+                                        <a href="#cta"
+                                            class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs hover:bg-lime-300">
+                                            Streamline Immigration Docs
+                                        </a>
+                                           <a onclick="showBundle('immigration')"
+                                            class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">
+                                            View Immigration Bundle
+                                        </a>
+                                        <a href="#bundles"
+                                            class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">
+                                            Buy Now
+                                        </a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=1400&auto=format&fit=crop"
+                                        alt="Immigration Services" class="rounded-lg shadow-lg" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accounting -->
+                        <div id="panel-accounting" class="hidden bg-black text-white p-8 rounded-xl">
+                            <div class="grid md:grid-cols-2 gap-8 items-center">
+                                <div>
+                                    <h3 class="text-xl font-bold mb-3">Accounting — audit-ready books, zero stress.</h3>
+                                    <p class="mb-4 text-slate-200">
+                                        Reconciliations, statements, and compliance reports prepared
+                                        precisely — so your practice runs smooth.
+                                    </p>
+                                    <ul class="list-disc pl-6 space-y-2">
+                                        <li>Monthly/quarterly reconciliations</li>
+                                        <li>Financial statement preparation</li>
+                                        <li>Compliance-ready reporting</li>
+                                        <li>Custom client billing support</li>
+                                    </ul>
+                                    <div class="mt-6 flex flex-wrap gap-3">
+                                        <a href="#cta"
+                                            class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs hover:bg-lime-300">
+                                            Get Accounting Support
+                                        </a>
+                                        <a href="#bundles"
+                                            class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">
+                                            View Accounting Bundle
+                                        </a>
+                                        <a href="#bundles"
+                                            class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">
+                                            Buy Now
+                                        </a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img src="https://images.unsplash.com/photo-1554224155-1696413565d3?q=80&w=1400&auto=format&fit=crop"
+                                        alt="Accounting Services" class="rounded-lg shadow-lg" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bookkeeping -->
+                        <div id="panel-bookkeeping" class="hidden bg-black text-white p-8 rounded-xl">
+                            <div class="grid md:grid-cols-2 gap-8 items-center">
+                                <div>
+                                    <h3 class="text-xl font-bold mb-3">Bookkeeping — stay organized without the grind.
+                                    </h3>
+                                    <p class="mb-4 text-slate-200">
+                                        Clean, audit-ready books every time. We keep transactions tracked
+                                        and reconciled, so nothing slips.
+                                    </p>
+                                    <ul class="list-disc pl-6 space-y-2">
+                                        <li>Daily transaction recording</li>
+                                        <li>Accounts payable & receivable tracking</li>
+                                        <li>Bank & credit card reconciliations</li>
+                                        <li>Audit-ready recordkeeping</li>
+                                    </ul>
+                                    <div class="mt-6 flex flex-wrap gap-3">
+                                        <a href="#cta"
+                                            class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs hover:bg-lime-300">
+                                            Simplify Bookkeeping
+                                        </a>
+                                        <a href="#bundles"
+                                            class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">
+                                            View Bookkeeping Bundle
+                                        </a>
+                                        <a href="#bundles"
+                                            class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">
+                                            Buy Now
+                                        </a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1400&auto=format&fit=crop"
+                                        alt="Bookkeeping Services" class="rounded-lg shadow-lg" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tax -->
+                        <div id="panel-tax" class="hidden bg-black text-white p-8 rounded-xl">
+                            <div class="grid md:grid-cols-2 gap-8 items-center">
+                                <div>
+                                    <h3 class="text-xl font-bold mb-3">Tax Preparation — accuracy, compliance, and max
+                                        savings.</h3>
+                                    <p class="mb-4 text-slate-200">
+                                        From individuals to corporations, we prepare and file taxes with
+                                        precision — so you don’t worry about audits.
+                                    </p>
+                                    <ul class="list-disc pl-6 space-y-2">
+                                        <li>Individual & business tax returns</li>
+                                        <li>IRS compliance & audit support</li>
+                                        <li>Strategic tax planning</li>
+                                        <li>International filing assistance</li>
+                                    </ul>
+                                    <div class="mt-6 flex flex-wrap gap-3">
+                                        <a href="#cta"
+                                            class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs hover:bg-lime-300">
+                                            File Taxes Stress-Free
+                                        </a>
+                                        <a href="#bundles"
+                                            class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">
+                                            View Tax Bundle
+                                        </a>
+                                        <a href="#bundles"
+                                            class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">
+                                            Buy Now
+                                        </a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img src="https://www.livemint.com/lm-img/img/2024/11/21/600x338/income_tax_1732167994769_1732168047049.jpg"
+                                        alt="Tax Services" class="rounded-lg shadow-lg" />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <!-- Personal Injury -->
-                <div id="panel-pi" class="hidden bg-black text-white p-8 rounded-xl">
-                    <div class="grid md:grid-cols-2 gap-8 items-center">
-                        <div>
-                            <h3 class="text-xl font-bold mb-3">Personal Injury — we do the legwork that strengthens your demands.</h3>
-                            <p class="mb-4 text-slate-200">Get clean packages, fast: medical summaries, demand letters, discovery.</p>
-                            <ul class="list-disc pl-6 space-y-2">
-                                <li>Retrieve, index & summarize medical records</li>
-                                <li>Draft insurer demand letters</li>
-                                <li>Draft standard discovery responses</li>
-                                <li>Prepare deposition summaries</li>
-                                <li>Build settlement calculation sheets</li>
-                            </ul>
-                            <div class="mt-6 flex flex-wrap gap-3">
-                                <a href="#cta"
-                                    class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs hover:bg-lime-300">Start a PI Trial Task</a>
-                                <a href="#bundles"
-                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">View PI Bundle</a>
-                                <a href="#bundles"
-                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">Buy Now</a>
-                            </div>
-                        </div>
-                        <div>
-                            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1400&auto=format&fit=crop" 
-                                 alt="Personal Injury Law" class="rounded-lg shadow-lg">
-                        </div>
-                    </div>
-                </div>
+            <script>
+                function showPanel(id) {
+                    // Hide all panels
+                    document.querySelectorAll('[id^="panel-"]').forEach(el => {
+                        el.classList.add("hidden");
+                        el.classList.remove("fade-in");
+                    });
 
-                <!-- Real Estate -->
-                <div id="panel-re" class="hidden bg-black text-white p-8 rounded-xl">
-                    <div class="grid md:grid-cols-2 gap-8 items-center">
-                        <div>
-                            <h3 class="text-xl font-bold mb-3">Real Estate — from contracts to closings without the boilerplate grind.</h3>
-                            <p class="mb-4 text-slate-200">We prep, summarize, abstract and checklist the details so you can close faster.</p>
-                            <ul class="list-disc pl-6 space-y-2">
-                                <li>Draft/review leases & addendums</li>
-                                <li>Title search summaries</li>
-                                <li>Closing document preparation</li>
-                                <li>Escrow instructions & checklists</li>
-                                <li>Recording deeds coordination</li>
-                            </ul>
-                            <div class="mt-6 flex flex-wrap gap-3">
-                                <a href="#cta"
-                                    class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs hover:bg-lime-300">Request a Lease Abstraction</a>
-                                <a href="#bundles"
-                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">View Real Estate Bundle</a>
-                                <a href="#bundles"
-                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">Buy Now</a>
-                            </div>
-                        </div>
-                        <div>
-                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1373&q=80" 
-                                 alt="Real Estate Law" class="rounded-lg shadow-lg">
-                        </div>
-                    </div>
-                </div>
+                    // Remove active class from all buttons
+                    document.querySelectorAll('button').forEach(btn => {
+                        btn.classList.remove("active-tab");
+                    });
 
-                <!-- Estate Planning -->
-                <div id="panel-estate" class="hidden bg-black text-white p-8 rounded-xl">
-                    <div class="grid md:grid-cols-2 gap-8 items-center">
-                        <div>
-                            <h3 class="text-xl font-bold mb-3">Estate Planning — perfect packages, zero reformatting headaches.</h3>
-                            <p class="mb-4 text-slate-200">We assemble, proof and file the document sets that protect your clients' legacies.</p>
-                            <ul class="list-disc pl-6 space-y-2">
-                                <li>Draft wills, trusts & POA templates</li>
-                                <li>Organize asset inventories</li>
-                                <li>Prepare probate court filings</li>
-                                <li>Beneficiary communications & notices</li>
-                                <li>Proofread final estate packages</li>
-                            </ul>
-                            <div class="mt-6 flex flex-wrap gap-3">
-                                <a href="#cta"
-                                    class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs hover:bg-lime-300">Start an Estate Plan Packet</a>
-                                <a href="#bundles"
-                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">View Estate Bundle</a>
-                                <a href="#bundles"
-                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">Buy Now</a>
-                            </div>
-                        </div>
-                        <div>
-                            <img src="https://www.lobbplewe.com/wp-content/uploads/2022/10/What-Are-the-Main-Steps-in-Estate-Planning.jpeg" 
-                                 alt="Estate Planning" class="rounded-lg shadow-lg">
-                        </div>
-                    </div>
-                </div>
+                    // Show selected panel with animation
+                    const panel = document.getElementById("panel-" + id);
+                    panel.classList.remove("hidden");
+                    setTimeout(() => {
+                        panel.classList.add("fade-in");
+                    }, 10);
 
-                <!-- Intellectual Property -->
-                <div id="panel-ip" class="hidden bg-black text-white p-8 rounded-xl">
-                    <div class="grid md:grid-cols-2 gap-8 items-center">
-                        <div>
-                            <h3 class="text-xl font-bold mb-3">Intellectual Property — filings, dockets, and deadlines handled.</h3>
-                            <p class="mb-4 text-slate-200">We keep the paperwork moving so you can focus on strategy & prosecution.</p>
-                            <ul class="list-disc pl-6 space-y-2">
-                                <li>Trademark searches & application drafting</li>
-                                <li>Draft office action response shells</li>
-                                <li>IP docket/calendar maintenance</li>
-                                <li>Patent filing forms & checklists</li>
-                                <li>Licensing templates & renewals</li>
-                            </ul>
-                            <div class="mt-6 flex flex-wrap gap-3">
-                                <a href="#cta"
-                                    class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs hover:bg-lime-300">Request a TM Search Report</a>
-                                <a href="#bundles"
-                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">View IP Bundle</a>
-                                <a href="#bundles"
-                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">Buy Now</a>
-                            </div>
-                        </div>
-                        <div>
-                            <img src="https://www.clio.com/wp-content/uploads/2017/04/IP-Docketing-01.png" 
-                                 alt="Intellectual Property Law" class="rounded-lg shadow-lg">
-                        </div>
-                    </div>
-                </div>
+                    // Add active class to clicked button
+                    event.target.classList.add("active-tab");
+                }
 
-                <!-- Business Law -->
-                <div id="panel-biz" class="hidden bg-black text-white p-8 rounded-xl">
-                    <div class="grid md:grid-cols-2 gap-8 items-center">
-                        <div>
-                            <h3 class="text-xl font-bold mb-3">Business Law — documentation that keeps deals moving.</h3>
-                            <p class="mb-4 text-slate-200">From NDAs to board minutes, get drafts and checklists on autopilot.</p>
-                            <ul class="list-disc pl-6 space-y-2">
-                                <li>Draft NDAs, employment & vendor agreements</li>
-                                <li>Compliance calendars & state filings</li>
-                                <li>Due diligence summaries (M&A)</li>
-                                <li>Board resolutions & corporate minutes</li>
-                                <li>Cap table maintenance & shareholder updates</li>
-                                <li>Draft stock purchase agreements & SAFE notes</li>
-                            </ul>
-                            <div class="mt-6 flex flex-wrap gap-3">
-                                <a href="#cta"
-                                    class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs hover:bg-lime-300">Book a Free Strategy Call</a>
-                                <a href="#bundles"
-                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">View Business Law Bundle</a>
-                                <a href="#bundles"
-                                    class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">Buy Now</a>
-                            </div>
-                        </div>
-                        <div>
-                            <img src="https://images.unsplash.com/photo-1560264418-c4445382edbc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                                 alt="Business Law" class="rounded-lg shadow-lg">
-                        </div>
-                    </div>
-                </div>
-            </div>
+                // Show Family Law by default
+                document.addEventListener('DOMContentLoaded', function () {
+                    showPanel('family');
+                });
+            </script>
+<section id="drop" class="py-10 bg-[#cbff54] overflow-hidden">
+  <div class="flex flex-col items-center justify-center gap-4 flex-wrap mb-10">
+    <h2 class="text-2xl text-center md:text-3xl font-bold text-black">
+      Drop Your Requirement
+    </h2>
+    <div class="text-sm text-black text-center max-w-3xl">
+      Your Practice Deserves the Best. Tailored for USA Attorneys and CPAs.
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
+    <!-- Left Image -->
+    <div class="relative">
+      <img
+        src="https://images.unsplash.com/photo-1589998059171-988d887df646?auto=format&fit=crop&w=1400&q=80"
+        alt="Attorneys collaborating"
+        class="rounded-2xl shadow-2xl"
+      />
+    </div>
+
+    <!-- Form Card -->
+    <div class="card bg-black rounded-2xl p-6 sm:p-8 border border-gray-800 shadow-xl text-white">
+      <!-- Step indicator -->
+      <div class="flex items-center gap-3 mb-6">
+        <span
+          id="step-indicator"
+          class="inline-flex w-9 h-9 items-center justify-center rounded-full bg-[#cbff54] text-black font-bold"
+        >
+          1
+        </span>
+        <p class="text-2xl font-bold text-black">
+          Drop Your Requirement
+        </p>
+      </div>
+
+      <!-- Steps -->
+      <form id="multiStepForm" class="space-y-6">
+        <!-- STEP 1 -->
+        <div class="step" data-step="1">
+          <label class="block text-sm font-medium mb-2">What do you need?</label>
+          <select class="w-full border rounded-lg p-3 mb-4 text-black">
+            <option>Select work type</option>
+            <option>Legal Research</option>
+            <option>Drafting / Pleadings</option>
+            <option>Discovery / eDiscovery</option>
+            <option>Client Intake</option>
+            <option>Accounting / Bookkeeping</option>
+          </select>
+
+          <textarea
+            class="w-full border rounded-lg p-3 text-black"
+            rows="4"
+            placeholder="Describe your task, scope, deadlines"
+          ></textarea>
+
+          <div class="grid sm:grid-cols-2 gap-4 mt-4">
+            <input
+              type="text"
+              class="border rounded-lg p-3 text-black"
+              placeholder="Your Name"
+            />
+            <input
+              type="email"
+              class="border rounded-lg p-3 text-black"
+              placeholder="Work Email"
+            />
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4 mt-4">
+            <input
+              type="tel"
+              class="border rounded-lg p-3 text-black"
+              placeholder="Phone (optional)"
+            />
+            <select class="w-full border rounded-lg p-3 text-black">
+              <option>Select urgency</option>
+              <option>Urgency: Standard</option>
+              <option>Urgency: Expedited</option>
+              <option>Urgency: Overnight</option>
+            </select>
+          </div>
+
+          <div class="mt-6 flex justify-end">
+            <button
+              type="button"
+              class="px-5 py-3 rounded-sm bg-[#cbff54] text-black"
+              onclick="nextStep()"
+            >
+              Next
+            </button>
+          </div>
         </div>
-    </section>
 
-    <script>
-        function showPanel(id) {
-            // Hide all panels
-            document.querySelectorAll('[id^="panel-"]').forEach(el => {
-                el.classList.add("hidden");
-                el.classList.remove("fade-in");
-            });
-            
-            // Remove active class from all buttons
-            document.querySelectorAll('button').forEach(btn => {
-                btn.classList.remove("active-tab");
-            });
-            
-            // Show selected panel with animation
-            const panel = document.getElementById("panel-" + id);
-            panel.classList.remove("hidden");
-            setTimeout(() => {
-                panel.classList.add("fade-in");
-            }, 10);
-            
-            // Add active class to clicked button
-            event.target.classList.add("active-tab");
-        }
+        <!-- STEP 2 -->
+        <div class="step hidden" data-step="2">
+          <label class="block text-sm font-medium mb-2">Preferred Delivery Location</label>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <button
+              type="button"
+              class="border rounded-xl p-4 text-left hover:bg-gray-800"
+            >
+              <div class="font-semibold">🇺🇸 USA Premium</div>
+              <div class="text-xs text-gray-400">Onshore talent, higher rates</div>
+            </button>
+            <button
+              type="button"
+              class="border rounded-xl p-4 text-left hover:bg-gray-800"
+            >
+              <div class="font-semibold">🇮🇳 India GCC</div>
+              <div class="text-xs text-gray-400">
+                Bangalore, Delhi, Noida, Pune, Mumbai
+              </div>
+            </button>
+          </div>
+
+          <div class="mt-4">
+            <label class="block text-sm font-medium mb-2">Select City</label>
+            <select class="w-full border rounded-lg p-3 text-black">
+              <option>Choose city</option>
+              <option>Bangalore</option>
+              <option>Delhi</option>
+              <option>Noida</option>
+              <option>Pune</option>
+              <option>Mumbai</option>
+            </select>
+          </div>
+
+          <div class="mt-6 flex justify-between">
+            <button
+              type="button"
+              class="px-5 py-3 rounded-xl border border-gray-500"
+              onclick="prevStep()"
+            >
+              Back
+            </button>
+            <button
+              type="button"
+              class="px-5 py-3 rounded-sm bg-[#cbff54] text-black"
+              onclick="nextStep()"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="step hidden" data-step="3">
+          <label class="block text-sm font-medium mb-2"
+            >Attach briefs / examples (optional)</label
+          >
+          <input
+            type="file"
+            class="w-full border rounded-lg p-3 text-black bg-white"
+            multiple
+          />
+
+          <div class="grid sm:grid-cols-2 gap-4 mt-4">
+            <select class="w-full border rounded-lg p-3 text-black">
+              <option>Select budget</option>
+              <option>Not sure</option>
+              <option>$200–$500</option>
+              <option>$500–$1,500</option>
+              <option>$1,500–$5,000</option>
+              <option>$5,000+</option>
+            </select>
+
+            <select class="w-full border rounded-lg p-3 text-black">
+              <option>Select start time</option>
+              <option>ASAP</option>
+              <option>This week</option>
+              <option>Next week</option>
+            </select>
+          </div>
+
+          <div class="mt-6 flex justify-between">
+            <button
+              type="button"
+              class="px-5 py-3 rounded-sm border-2 border-white"
+              onclick="prevStep()"
+            >
+              Back
+            </button>
+            <button
+              type="submit"
+              class="px-5 py-3 rounded-sm bg-[#cbff54] text-black"
+            >
+              Submit via Email
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  let currentStep = 1;
+  const totalSteps = 3;
+
+  function showStep(step) {
+    document.querySelectorAll(".step").forEach((el) => el.classList.add("hidden"));
+    document
+      .querySelector(`.step[data-step="${step}"]`)
+      .classList.remove("hidden");
+    document.getElementById("step-indicator").textContent = step;
+  }
+
+  function nextStep() {
+    if (currentStep < totalSteps) {
+      currentStep++;
+      showStep(currentStep);
+    }
+  }
+
+  function prevStep() {
+    if (currentStep > 1) {
+      currentStep--;
+      showStep(currentStep);
+    }
+  }
+
+  // init
+  showStep(currentStep);
+</script>
+<!-- === Section: Train Your Own Paralegals === -->
+<section id="train" class="py-20 bg-[#cbff54]">
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
+    
+    <!-- Left side -->
+    <div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-black">
+        Train Your Own Paralegals — with AI
+      </h2>
+      <p class="mt-4 text-gray-800">
+        Codify your preferences: drafting tone, templates, citation styles, tool stack and SOPs. 
+        We’ll align paralegals and augment with AI to keep consistency across matters.
+      </p>
+<div class="mt-6 flex gap-3">
+  <div class="px-4 py-2 rounded-md bg-black text-white text-xs font-semibold text-center">
+    Upload SOPs
+  </div>
+  <div class="px-4 py-2 rounded-md bg-black text-white text-xs font-semibold text-center">
+    Choose Tools
+  </div>
+  <div class="px-4 py-2 rounded-md bg-black text-white text-xs font-semibold text-center">
+    Style & Citations
+  </div>
+</div>
+
+
+      <button class="mt-6 px-6 py-3 rounded-sm bg-black text-white text-base font-semibold">
+        Open Training Wizard
+      </button>
+    </div>
+
+    <!-- Right side video -->
+    <div class="relative rounded-2xl overflow-hidden bg-black shadow-2xl">
+      <video autoplay muted loop playsinline class="w-full h-full object-cover">
+        <source src="https://player.vimeo.com/external/447726769.sd.mp4?s=1f74a03bda69f9b06af57f10d8ec05c5c7d7a7db&profile_id=164&oauth2_token_id=57447761" type="video/mp4" />
+      </video>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- Bundle Pricing Modal -->
+<!-- Bundle Pricing Modal -->
+<div id="bundleModal" class="fixed inset-0 bg-black bg-opacity-90 hidden flex justify-center items-center z-50">
+    <div class="bg-black text-white rounded-sm max-w-3xl w-full p-6 relative border-2 border-lime-500 shadow-lg">
+        <!-- Close Button -->
+        <button id="closeModal" class="absolute top-3 right-3 text-white font-bold text-2xl hover:text-lime-400">&times;</button>
         
-        // Show Family Law by default
-        document.addEventListener('DOMContentLoaded', function() {
-            showPanel('family');
+        <!-- Title -->
+        <h2 class="text-2xl font-bold mb-6 text-center text-lime-400">Bundle Pricing</h2>
+        
+        <!-- Dynamic Content -->
+        <div id="bundleContent" class="overflow-x-auto">
+            <!-- Pricing table will be injected here -->
+        </div>
+    </div>
+</div>
+
+<script>
+const bundleData = {
+    family: {
+        name: "Family Law",
+        description: "Divorce petitions, custody agreements, prenup & postnup drafting, separation agreements",
+        pricing: [
+            { plan: "Basic (40 hrs/mo)", price: "$400", effective: "$10 → $7/hr" },
+            { plan: "Standard (80 hrs/mo)", price: "$900", effective: "$10 → $7/hr" },
+            { plan: "Premium (160 hrs/mo)", price: "$1,600", effective: "$10 → $7/hr" },
+            { plan: "Enterprise (Custom hrs)", price: "Custom Pricing", effective: "$10 → $7/hr" },
+        ]
+    },
+    pi: {
+        name: "Personal Injury",
+        description: "Case intake, medical record review, drafting discovery responses, settlement demand letters",
+        pricing: [
+            { plan: "Basic (40 hrs/mo)", price: "$440", effective: "$11 → $7/hr" },
+            { plan: "Standard (80 hrs/mo)", price: "$960", effective: "$11 → $7/hr" },
+            { plan: "Premium (160 hrs/mo)", price: "$1,680", effective: "$11 → $7/hr" },
+            { plan: "Enterprise (Custom hrs)", price: "Custom Pricing", effective: "$11 → $7/hr" },
+        ]
+    },
+    re: {
+        name: "Real Estate Law",
+        description: "Lease reviews, purchase agreements, title document support, closing checklists",
+        pricing: [
+            { plan: "Basic (40 hrs/mo)", price: "$420", effective: "$10.5 → $7/hr" },
+            { plan: "Standard (80 hrs/mo)", price: "$920", effective: "$10.5 → $7/hr" },
+            { plan: "Premium (160 hrs/mo)", price: "$1,680", effective: "$10.5 → $7/hr" },
+            { plan: "Enterprise (Custom hrs)", price: "Custom Pricing", effective: "$10.5 → $7/hr" },
+        ]
+    },
+    estate: {
+        name: "Estate Planning",
+        description: "Wills, trusts, probate petitions, powers of attorney, estate inventory management",
+        pricing: [
+            { plan: "Basic (40 hrs/mo)", price: "$400", effective: "$10 → $7/hr" },
+            { plan: "Standard (80 hrs/mo)", price: "$880", effective: "$10 → $7/hr" },
+            { plan: "Premium (160 hrs/mo)", price: "$1,640", effective: "$10 → $7/hr" },
+            { plan: "Enterprise (Custom hrs)", price: "Custom Pricing", effective: "$10 → $7/hr" },
+        ]
+    },
+    ip: {
+        name: "Intellectual Property",
+        description: "Trademark search & filings, patent drafting support, copyright documentation, docketing",
+        pricing: [
+            { plan: "Basic (40 hrs/mo)", price: "$480", effective: "$12 → $8/hr" },
+            { plan: "Standard (80 hrs/mo)", price: "$1,080", effective: "$12 → $8/hr" },
+            { plan: "Premium (160 hrs/mo)", price: "$1,920", effective: "$12 → $8/hr" },
+            { plan: "Enterprise (Custom hrs)", price: "Custom Pricing", effective: "$12 → $8/hr" },
+        ]
+    },
+    biz: {
+        name: "Business/Corporate Law",
+        description: "Contract drafting, M&A due diligence, compliance review, corporate filings",
+        pricing: [
+            { plan: "Basic (40 hrs/mo)", price: "$460", effective: "$11.5 → $7.5/hr" },
+            { plan: "Standard (80 hrs/mo)", price: "$1,000", effective: "$11.5 → $7.5/hr" },
+            { plan: "Premium (160 hrs/mo)", price: "$1,800", effective: "$11.5 → $7.5/hr" },
+            { plan: "Enterprise (Custom hrs)", price: "Custom Pricing", effective: "$11.5 → $7.5/hr" },
+        ]
+    },
+    immigration: {
+        name: "Immigration Law",
+        description: "Visa applications, PERM filings, USCIS form preparation, EAD/work permit support",
+        pricing: [
+            { plan: "Basic (40 hrs/mo)", price: "$440", effective: "$11 → $7.5/hr" },
+            { plan: "Standard (80 hrs/mo)", price: "$960", effective: "$11 → $7.5/hr" },
+            { plan: "Premium (160 hrs/mo)", price: "$1,760", effective: "$11 → $7.5/hr" },
+            { plan: "Enterprise (Custom hrs)", price: "Custom Pricing", effective: "$11 → $7.5/hr" },
+        ]
+    }
+};
+
+// Open Modal & Inject Pricing
+function showBundle(area) {
+    const modal = document.getElementById("bundleModal");
+    const content = document.getElementById("bundleContent");
+
+    if (!bundleData[area]) return;
+
+    const data = bundleData[area];
+
+    let tableHTML = `
+        <p class="mb-4 text-white">${data.description}</p>
+        <table class="w-full text-left">
+            <thead class="bg-[#cbff54]">
+                <tr>
+                    <th class="px-4 py-2 text-black">Plan</th>
+                    <th class="px-4 py-2 text-black">Price</th>
+                    <th class="px-4 py-2 text-black">Effective Hourly</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${data.pricing.map(p => `
+                    <tr class="group hover:bg-[#cbff54]">
+                        <td class="px-4 py-2 text-white group-hover:text-black">${p.plan}</td>
+                        <td class="px-4 py-2 text-white group-hover:text-black">${p.price}</td>
+                        <td class="px-4 py-2 text-white group-hover:text-black">${p.effective}</td>
+                    </tr>
+                `).join("")}
+            </tbody>
+        </table>
+    `;
+
+    content.innerHTML = tableHTML;
+    modal.classList.remove("hidden");
+}
+
+
+
+// Close Modal
+document.getElementById("closeModal").addEventListener("click", () => {
+    document.getElementById("bundleModal").classList.add("hidden");
+});
+
+// Optional: Close modal when clicking outside content
+document.getElementById("bundleModal").addEventListener("click", (e) => {
+    if (e.target === e.currentTarget) {
+        e.currentTarget.classList.add("hidden");
+    }
+});
+</script>
+
+
+<section id="delivery" class="py-20  bg-[#cbff54]">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Header + Toggle -->
+    <div class="flex items-center justify-between flex-wrap gap-4 mb-8">
+ <h2 class="text-3xl sm:text-4xl font-extrabold text-black">Delivery & Pricing</h2>
+      <div class="flex items-center gap-3 bg-black  rounded-sm px-2 py-1">
+        <button class="px-4 py-2 rounded-sm transition  " id="btnUSA">🇺🇸 USA</button>
+        <button class="px-4 py-2 rounded-sm transition" id="btnIndia">🇮🇳 India</button>
+      </div>
+    </div>
+
+    <!-- Pricing Cards -->
+    <div class="mt-8 grid lg:grid-cols-3 gap-6" id="pricingCards">
+      <div class="card bg-black border rounded-2xl p-6 cursor-pointer">
+        <div class="text-sm text-gray-300">Paralegal</div>
+        <div class="text-3xl font-extrabold mt-1" id="paralegalPrice">$45–$75/hr</div>
+        <ul class="mt-4 space-y-2 text-sm text-gray-300">
+          <li>✅ Drafting, research, discovery</li>
+          <li>✅ Timezone alignment</li>
+          <li>✅ Tool proficiency: Clio, Westlaw</li>
+        </ul>
+        <button class="mt-6 w-fit px-4 py-2 rounded-sm bg-[#cbff54] text-black">Start</button>
+      </div>
+      <div class="card bg-black border rounded-2xl p-6 cursor-pointer">
+        <div class="text-sm text-gray-300">Legal VA</div>
+        <div class="text-3xl font-extrabold mt-1" id="legalVAPrice">$35–$55/hr</div>
+        <ul class="mt-4 space-y-2 text-sm text-gray-300">
+          <li>✅ Calendars, intake, docs, e-filing</li>
+          <li>✅ SLA based</li>
+          <li>✅ Tool proficiency: DocuSign, Clio</li>
+        </ul>
+        <button class="mt-6 w-fit px-4 py-2 rounded-sm bg-[#cbff54] text-black">Start</button>
+      </div>
+      <div class="card bg-black border rounded-2xl p-6 cursor-pointer">
+        <div class="text-sm text-gray-300">Legal Accounting</div>
+        <div class="text-3xl font-extrabold mt-1" id="legalAccPrice">$50–$90/hr</div>
+        <ul class="mt-4 space-y-2 text-sm text-gray-300">
+          <li>✅ Trust accounting, AR/AP</li>
+          <li>✅ QuickBooks, Xero</li>
+          <li>✅ Monthly closes & reports</li>
+        </ul>
+        <button class="mt-6 w-fit px-4 py-2 rounded-sm bg-[#cbff54] text-black">Start</button>
+      </div>
+    </div>
+
+    <!-- City Selector -->
+    <div class="mt-10">
+      <div class="text-sm text-black mb-3">Preferred city</div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4" id="citySelector">
+        <!-- Cities dynamically inserted by JS -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Delivery toggle
+  const btnUSA = document.getElementById("btnUSA");
+  const btnIndia = document.getElementById("btnIndia");
+
+  const paralegalPrice = document.getElementById("paralegalPrice");
+  const legalVAPrice = document.getElementById("legalVAPrice");
+  const legalAccPrice = document.getElementById("legalAccPrice");
+
+  const citySelector = document.getElementById("citySelector");
+
+  const indiaCities = [
+    { name: "Bangalore", img: "https://picsum.photos/200?1" },
+    { name: "Delhi", img: "https://picsum.photos/200?2" },
+    { name: "Noida", img: "https://picsum.photos/200?3" },
+    { name: "Pune", img: "https://picsum.photos/200?4" },
+    { name: "Mumbai", img: "https://picsum.photos/200?5" }
+  ];
+
+  const usCities = [
+    { name: "San Francisco/Bay Area", img: "https://picsum.photos/200?6" },
+    { name: "New York City", img: "https://picsum.photos/200?7" },
+    { name: "Los Angeles", img: "https://picsum.photos/200?8" },
+    { name: "Seattle", img: "https://picsum.photos/200?9" },
+    { name: "Miami", img: "https://picsum.photos/200?10" }
+  ];
+
+  let selectedDelivery = "USA";
+
+  function renderCities(cities) {
+    citySelector.innerHTML = "";
+    cities.forEach(c => {
+      const btn = document.createElement("button");
+      btn.className = "relative group rounded-2xl overflow-hidden border";
+      btn.innerHTML = `
+        <img src="${c.img}" alt="${c.name}" class="h-28 w-full object-cover group-hover:scale-105 transform transition"/>
+        <div class="absolute inset-0 bg-black/30"></div>
+        <div class="absolute bottom-2 left-2 text-white text-sm font-semibold">${c.name}</div>
+        <div class="absolute top-2 right-2 text-xs px-2 py-1 rounded-full bg-white/70 text-gray-900">Select</div>
+      `;
+      btn.addEventListener("click", () => {
+        Array.from(citySelector.children).forEach(ch => {
+          ch.querySelector("div:last-child").classList.replace("bg-white","bg-white/70");
         });
-    </script>
-           
+        btn.querySelector("div:last-child").classList.replace("bg-white/70","bg-white");
+      });
+      citySelector.appendChild(btn);
+    });
+  }
 
-        
+function updateDelivery(delivery) {
+  selectedDelivery = delivery;
+
+  if (delivery === "USA") {
+    // USA selected → green bg, black text
+    btnUSA.classList.add("bg-[#cbff54]", "text-black");
+    btnUSA.classList.remove("bg-black", "text-white");
+
+    // India deselected → black bg, white text
+    btnIndia.classList.add("bg-black", "text-white");
+    btnIndia.classList.remove("bg-[#cbff54]", "text-black");
+
+    // Update prices
+    paralegalPrice.innerText = "$45–$75/hr";
+    legalVAPrice.innerText = "$35–$55/hr";
+    legalAccPrice.innerText = "$50–$90/hr";
+
+    renderCities(usCities);
+  } else {
+    // India selected → green bg, black text
+    btnIndia.classList.add("bg-[#cbff54]", "text-black");
+    btnIndia.classList.remove("bg-black", "text-white");
+
+    // USA deselected → black bg, white text
+    btnUSA.classList.add("bg-black", "text-white");
+    btnUSA.classList.remove("bg-[#cbff54]", "text-black");
+
+    // Update prices
+    paralegalPrice.innerText = "$15–$28/hr";
+    legalVAPrice.innerText = "$10–$20/hr";
+    legalAccPrice.innerText = "$18–$35/hr";
+
+    renderCities(indiaCities);
+  }
+}
+
+
+
+  btnUSA.addEventListener("click", () => updateDelivery("USA"));
+  btnIndia.addEventListener("click", () => updateDelivery("India"));
+
+  // Initial render
+  updateDelivery(selectedDelivery);
+</script>
+
+<section id="gcc" class="relative overflow-hidden bg-[#cbff54] text-black">
+  <!-- Video background (optional) -->
+  <!-- <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline>
+    <source src="https://player.vimeo.com/external/310938207.sd.mp4?s=b2990980528c67a0a491ebf38a94ed245032e0cd&profile_id=164&oauth2_token_id=57447761" type="video/mp4">
+  </video> -->
+
+  <!-- Overlay (removed because we want bg #cbff54) -->
+  <div class="relative max-w-7xl mx-auto px-6 py-24">
+    <h2 class="text-3xl sm:text-4xl font-extrabold">
+      Set Up Your Own Global Capability Center in India
+    </h2>
+    <p class="mt-4 max-w-2xl text-black">
+      Dedicated office, branded culture, tailored recruitment, on‑demand scale.
+      Fully managed compliance, payroll & facilities.
+    </p>
+
+    <div class="mt-6 grid sm:grid-cols-3 gap-4">
+      <div class="rounded-2xl p-5 border border-black/10 cursor-pointer bg-white/20">
+        <div class="font-semibold">Talent Acquisition</div>
+        <div class="text-sm">Paralegals, CPAs, support staff</div>
+      </div>
+      <div class="rounded-2xl p-5 border border-black/10 cursor-pointer bg-white/20">
+        <div class="font-semibold">Workspace & IT</div>
+        <div class="text-sm">Secure networks, access controls</div>
+      </div>
+      <div class="rounded-2xl p-5 border border-black/10 cursor-pointer bg-white/20">
+        <div class="font-semibold">Compliance & HR</div>
+        <div class="text-sm">SOPs, SLAs, audits</div>
+      </div>
+    </div>
+
+    <button class="mt-8 px-6 py-3 rounded-xl bg-black text-[#cbff54] font-semibold">
+      Book Discovery Call
+    </button>
+  </div>
+</section>
+
+<section class="py-20 bg-[#cbff54] text-black">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-center">
+      What Clients Say
+    </h2>
+
+    <div class="mt-10 max-w-3xl mx-auto text-center relative">
+      <!-- Testimonial Card -->
+      <div id="testimonial-card" class="card bg-white/30 border border-black/20 rounded-2xl p-8 relative overflow-hidden transition-all duration-500">
+        <!-- Quote icon -->
+        <svg viewBox="0 0 24 24" class="w-10 h-10 mx-auto mb-4" fill="currentColor">
+          <path d="M7.17 6A5.17 5.17 0 0 0 2 11.17V22h8V11.17A5.17 5.17 0 0 0 4.83 6H7.17Zm12 0A5.17 5.17 0 0 0 14 11.17V22h8V11.17A5.17 5.17 0 0 0 16.83 6h2.34Z" />
+        </svg>
+
+        <!-- Quote Text -->
+        <p id="testimonial-quote" class="text-lg text-black"></p>
+        <div id="testimonial-name" class="mt-4 font-semibold"></div>
+        <div id="testimonial-title" class="text-sm text-gray-700"></div>
+
+        <!-- Dots -->
+        <div id="testimonial-dots" class="flex justify-center gap-2 mt-6"></div>
+      </div>
+
+      <!-- Prev / Next buttons -->
+      <div class="mt-6 flex justify-center gap-4">
+        <button id="prev-btn" class="px-3 py-2 border rounded-lg hover:bg-black/10">Prev</button>
+        <button id="next-btn" class="px-3 py-2 border rounded-lg hover:bg-black/10">Next</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const testimonials = [
+    { quote: "JurisLPO helped us cut costs by 60% and improve efficiency.", name: "Sarah M.", title: "Managing Partner, Chicago Firm" },
+    { quote: "Seamless support across paralegal and accounting functions.", name: "David K.", title: "CFO, San Francisco Law Group" },
+    { quote: "Reliable, professional, and aligned with US time zones.", name: "Priya R.", title: "General Counsel, Tech Startup" }
+  ];
+
+  let index = 0;
+  const quoteEl = document.getElementById("testimonial-quote");
+  const nameEl = document.getElementById("testimonial-name");
+  const titleEl = document.getElementById("testimonial-title");
+  const dotsEl = document.getElementById("testimonial-dots");
+
+  // Initialize dots
+  testimonials.forEach((_, i) => {
+    const dot = document.createElement("span");
+    dot.className = `w-3 h-3 rounded-full cursor-pointer transition-colors`;
+    dot.addEventListener("click", () => showTestimonial(i));
+    dotsEl.appendChild(dot);
+  });
+
+  const updateDots = () => {
+    Array.from(dotsEl.children).forEach((dot, i) => {
+      dot.classList.toggle("bg-black", i === index);
+      dot.classList.toggle("bg-gray-300", i !== index);
+    });
+  };
+
+  const showTestimonial = (i) => {
+    index = i;
+    const t = testimonials[index];
+    quoteEl.textContent = `"${t.quote}"`;
+    nameEl.textContent = t.name;
+    titleEl.textContent = t.title;
+    updateDots();
+  };
+
+  // Prev / Next buttons
+  document.getElementById("prev-btn").addEventListener("click", () => {
+    showTestimonial((index + testimonials.length - 1) % testimonials.length);
+  });
+
+  document.getElementById("next-btn").addEventListener("click", () => {
+    showTestimonial((index + 1) % testimonials.length);
+  });
+
+  // Auto-play every 5 seconds
+  setInterval(() => {
+    showTestimonial((index + 1) % testimonials.length);
+  }, 5000);
+
+  // Initialize first testimonial
+  showTestimonial(0);
+</script>
+
+<section id="contact" class="py-20 bg-[#cbff54] text-black">
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
+    
+    <!-- Left Info -->
+    <div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold">Let’s Talk</h2>
+      <p class="mt-2 text-black/80">
+        Tell us about your caseload, timelines, tooling and budget. We’ll propose a tailored plan within 24 hours.
+      </p>
+      <div class="mt-6 space-y-3 text-sm">
+        <div>📍 Offices: Austin, TX • San Francisco, CA • Chicago, IL</div>
+        <div>🌐 GCCs: Bangalore • Delhi • Noida • Pune • Mumbai</div>
+        <div>✉️ Email: hello@jurislpo.com</div>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <form class="bg-black  rounded-2xl py-6 px-4 grid grid-cols-1 gap-4" onsubmit="return false;">
+      <input class="border bg-black text-white rounded-lg p-3" placeholder="Full Name" required />
+      <input type="email" class="border rounded-lg p-3  bg-black text-white" placeholder="Work Email" required />
+      <input class="border rounded-lg p-3  bg-black text-white" placeholder="Firm / Company" />
+      <textarea rows="4" class="border rounded-lg p-3  bg-black text-white" placeholder="How can we help?"></textarea>
+      <button class="px-6 py-3 w-fit rounded-sm text-black bg-[#cbff54] font-semibold">Send</button>
+      <div class="text-xs text-black/70">By submitting, you agree to our privacy policy.</div>
+    </form>
+
+  </div>
+</section>
+
+
+<footer class="bg-[#cbff54] text-black">
+  <div class="max-w-7xl mx-auto px-6 py-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+    <!-- Logo & Description -->
+    <div>
+      <div class="flex items-center">
+        <div class="text-2xl font-bold">
+          Juris LPO
+        </div>
+      </div>
+      <p class="text-sm mt-3 text-black">
+        Premium legal outsourcing for US law firms and CPAs.
+      </p>
+    </div>
+
+    <!-- Services -->
+    <div>
+      <div class="font-semibold mb-3">Services</div>
+      <ul class="space-y-2 text-sm text-black">
+        <li>Paralegal Support</li>
+        <li>Legal Research & Drafting</li>
+        <li>Discovery / eDiscovery</li>
+        <li>Legal Accounting</li>
+      </ul>
+    </div>
+
+    <!-- Company -->
+    <div>
+      <div class="font-semibold mb-3">Company</div>
+      <ul class="space-y-2 text-sm text-black">
+        <li>About</li>
+        <li>Careers</li>
+        <li>Security</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+
+    <!-- Legal -->
+    <div>
+      <div class="font-semibold mb-3">Legal</div>
+      <ul class="space-y-2 text-sm text-black">
+        <li>Privacy Policy</li>
+        <li>Terms of Service</li>
+        <li>DPA</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="border-t border-black/10 text-center text-sm py-4">
+    © 2025 JURIS LPO. All rights reserved.
+  </div>
+</footer>
+
+
+<div id="talentModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+  <div class="bg-[#cbff54] text-black w-full max-w-5xl rounded-2xl shadow-xl overflow-y-auto max-h-[90vh] relative p-6">
+
+    <!-- Close Button -->
+    <button onclick="closeTalentBrowser()" 
+      class="absolute top-3 right-3 text-black text-2xl font-bold hover:bg-black hover:text-white hover:rounded-full w-8 h-8 flex items-center justify-center transition-all">&times;</button>
+
+    <!-- Your Section Content -->
+    <section id="talent-browser" class="py-10">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-center">Browse Our Talent</h2>
+
+        <!-- Step Progress -->
+        <div id="progress" class="flex items-center justify-center mt-8">
+          <!-- Step 1 -->
+          <div class="flex items-center">
+            <div id="stepCircle1" class="w-10 h-10 flex items-center justify-center rounded-full font-bold bg-black text-white">1</div>
+            <div id="stepLine1" class="w-12 h-1 bg-black"></div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="flex items-center">
+            <div id="stepCircle2" class="w-10 h-10 flex items-center justify-center rounded-full font-bold bg-gray-300 text-black">2</div>
+            <div id="stepLine2" class="w-12 h-1 bg-gray-300"></div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="flex items-center">
+            <div id="stepCircle3" class="w-10 h-10 flex items-center justify-center rounded-full font-bold bg-gray-300 text-black">3</div>
+          </div>
+        </div>
+
+        <!-- Step 1 -->
+        <div id="step1" class="mt-10">
+          <h3 class="text-xl font-semibold mb-4">Select Category</h3>
+          <div class="grid grid-cols-2 gap-4">
+            <button 
+              onclick="selectCategory('Legal')" 
+              id="catLegal" 
+              class="p-6 rounded-xl border-2 text-center font-medium transition bg-white text-black border-gray-400 hover:bg-black hover:text-white hover:border-black"
+            >
+              Legal
+            </button>
+
+            <button 
+              onclick="selectCategory('Finance')" 
+              id="catFinance" 
+              class="p-6 rounded-xl border-2 text-center font-medium transition bg-white text-black border-gray-400 hover:bg-black hover:text-white hover:border-black"
+            >
+              Finance
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div id="step2" class="mt-10 hidden">
+          <h3 class="text-xl font-semibold mb-4">Choose Your State</h3>
+          <select id="stateSelect" class="rounded-lg p-3 w-full bg-black text-white">
+            <option value="">Select your state...</option>
+            <option>California</option>
+            <option>New York</option>
+            <option>Texas</option>
+            <option>Florida</option>
+            <option>Illinois</option>
+          </select>
+        </div>
+
+        <!-- Step 3 -->
+        <div id="step3" class="mt-10 hidden">
+          <h3 class="text-xl font-semibold mb-4">Engagement Model</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+  <button onclick="selectEngagement('Full Time')" id="engFull"
+    class="step-btn group p-4 rounded-xl border-2 text-center font-medium transition bg-white text-black border-gray-400 hover:bg-black hover:text-white hover:border-black">
+    Full Time 
+    <p class="text-sm mt-1 text-black group-hover:text-white">40+ hours/week</p>
+  </button>
+
+  <button onclick="selectEngagement('Part Time')" id="engPart"
+    class="step-btn group p-4 rounded-xl border-2 text-center font-medium transition bg-white text-black border-gray-400 hover:bg-black hover:text-white hover:border-black">
+    Part Time 
+    <p class="text-sm mt-1 text-black group-hover:text-white">20-39 hours/week</p>
+  </button>
+
+  <button onclick="selectEngagement('Hourly')" id="engHourly"
+    class="step-btn group p-4 rounded-xl border-2 text-center font-medium transition bg-white text-black border-gray-400 hover:bg-black hover:text-white hover:border-black">
+    Hourly 
+    <p class="text-sm mt-1 text-black group-hover:text-white">Flexible hours</p>
+  </button>
+</div>
+
+
+          <!-- Results -->
+          <div id="talentResults" class="mt-10 hidden">
+            <h4 class="text-lg font-semibold mb-4">Available Talent</h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+              <!-- Card 1 -->
+              <div class="flex items-start space-x-4 bg-black text-white p-4 rounded-xl shadow-md border border-gray-200">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+                  class="w-16 h-16 rounded-full object-cover">
+                <div>
+                  <h5 class="font-semibold">Sarah Johnson</h5>
+                  <p class="text-sm">Senior Paralegal • 8+ years</p>
+                  <span class="inline-block px-2 py-1 bg-[#cbff54] text-black rounded-full text-xs mr-1 mt-1">Contract Review</span>
+                  <span class="inline-block px-2 py-1 bg-[#cbff54] text-black rounded-full text-xs mr-1 mt-1">Legal Research</span>
+                  <div class="flex justify-between text-sm mt-2">
+                    <span>⭐ 4.9</span><span>$35-45/hr</span>
+                  </div>
+                  <button class="mt-2 px-4 py-2 bg-[#cbff54] text-black rounded-lg font-medium">Schedule Meeting</button>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="flex items-start space-x-4 bg-black text-white p-4 rounded-xl shadow-md border border-gray-200">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+                  class="w-16 h-16 rounded-full object-cover">
+                <div>
+                  <h5 class="font-semibold">Michael Chen</h5>
+                  <p class="text-sm">Legal Research Specialist • 6+ years</p>
+                  <span class="inline-block px-2 py-1 bg-[#cbff54] text-black rounded-full text-xs mr-1 mt-1">Litigation Support</span>
+                  <span class="inline-block px-2 py-1 bg-[#cbff54] text-black rounded-full text-xs mr-1 mt-1">Case Analysis</span>
+                  <div class="flex justify-between text-sm mt-2">
+                    <span>⭐ 4.8</span><span>$30-40/hr</span>
+                  </div>
+                  <button class="mt-2 px-4 py-2 bg-[#cbff54] text-black rounded-lg font-medium">Schedule Meeting</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Nav Buttons -->
+        <div class="flex justify-between items-center mt-10 pt-6 border-t border-black">
+          <button onclick="prevStep()" id="backBtn" class="px-6 py-3 border border-black rounded-lg hover:bg-black hover:text-white transition hidden">Back</button>
+          <button onclick="nextStep()" id="nextBtn" class="px-6 py-3 bg-gray-300 text-gray-500 rounded-lg cursor-not-allowed">Next</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+  let currStep = 1;
+  let selectedCategory = "";
+  let selectedState = "";
+  let selectedEngagement = "";
+
+  // Initialize the modal
+  function initTalentBrowser() {
+    showStep();
+    updateNextButton();
+  }
+
+  function openTalentBrowser() {
+    document.getElementById("talentModal").classList.remove("hidden");
+    initTalentBrowser();
+  }
+
+  function closeTalentBrowser() {
+    document.getElementById("talentModal").classList.add("hidden");
+    // Reset the modal for next time
+    resetTalentBrowser();
+  }
+
+  function resetTalentBrowser() {
+    currStep = 1;
+    selectedCategory = "";
+    selectedState = "";
+    selectedEngagement = "";
+    
+    // Reset category buttons
+    document.querySelectorAll("#step1 button").forEach(btn => {
+      btn.classList.remove("bg-black", "text-white", "border-black");
+      btn.classList.add("bg-white", "text-black", "border-gray-400");
+    });
+    
+    // Reset state select
+    document.getElementById("stateSelect").value = "";
+    
+    // Reset engagement buttons
+    document.querySelectorAll("#step3 .step-btn").forEach(btn => {
+      btn.classList.remove("bg-black", "text-white", "border-black");
+      btn.classList.add("bg-white", "text-black", "border-gray-400");
+    });
+    
+    // Hide results
+    document.getElementById("talentResults").classList.add("hidden");
+  }
+
+  // Update progress indicators
+  function updateProgress() {
+    // Update circles
+    for (let i = 1; i <= 3; i++) {
+      const circle = document.getElementById(`stepCircle${i}`);
+      if (i < currStep) {
+        circle.classList.add("bg-black", "text-white");
+        circle.classList.remove("bg-gray-300", "text-black");
+      } else if (i === currStep) {
+        circle.classList.add("bg-black", "text-white");
+        circle.classList.remove("bg-gray-300", "text-black");
+      } else {
+        circle.classList.add("bg-gray-300", "text-black");
+        circle.classList.remove("bg-black", "text-white");
+      }
+    }
+    
+    // Update lines
+    for (let i = 1; i <= 2; i++) {
+      const line = document.getElementById(`stepLine${i}`);
+      if (i < currStep) {
+        line.classList.add("bg-black");
+        line.classList.remove("bg-gray-300");
+      } else {
+        line.classList.add("bg-gray-300");
+        line.classList.remove("bg-black");
+      }
+    }
+  }
+
+  // Show current step
+  function showStep() {
+    document.getElementById("step1").classList.add("hidden");
+    document.getElementById("step2").classList.add("hidden");
+    document.getElementById("step3").classList.add("hidden");
+
+    document.getElementById(`step${currStep}`).classList.remove("hidden");
+    
+    // Show/hide back button
+    if (currStep > 1) {
+      document.getElementById("backBtn").classList.remove("hidden");
+    } else {
+      document.getElementById("backBtn").classList.add("hidden");
+    }
+    
+    updateProgress();
+    updateNextButton();
+  }
+
+  // Update next button state
+  function updateNextButton() {
+    const nextBtn = document.getElementById("nextBtn");
+    
+    let canProceed = false;
+    if (currStep === 1) {
+      canProceed = selectedCategory !== "";
+    } else if (currStep === 2) {
+      canProceed = selectedState !== "";
+    } else if (currStep === 3) {
+      canProceed = selectedEngagement !== "";
+    }
+    
+    if (canProceed) {
+      nextBtn.classList.remove("bg-gray-300", "text-gray-500", "cursor-not-allowed");
+      nextBtn.classList.add("bg-black", "text-white", "cursor-pointer");
+    } else {
+      nextBtn.classList.remove("bg-black", "text-white", "cursor-pointer");
+      nextBtn.classList.add("bg-gray-300", "text-gray-500", "cursor-not-allowed");
+    }
+    
+    // Update button text on last step
+    if (currStep === 3) {
+      nextBtn.textContent = "Show Results";
+    } else {
+      nextBtn.textContent = "Next";
+    }
+  }
+
+  // Next step
+  function nextStep() {
+    // Check if we can proceed
+    if (currStep === 1 && selectedCategory === "") return;
+    if (currStep === 2 && selectedState === "") return;
+    if (currStep === 3 && selectedEngagement === "") return;
+    
+    if (currStep < 3) {
+      currStep++;
+      showStep();
+    } else if (currStep === 3) {
+      document.getElementById("talentResults").classList.remove("hidden");
+      document.getElementById("nextBtn").classList.add("hidden");
+    }
+  }
+
+  // Previous step
+  function prevStep() {
+    if (currStep > 1) {
+      currStep--;
+      showStep();
+    }
+  }
+
+  // Category selection
+  function selectCategory(cat) {
+    selectedCategory = cat;
+    
+    // Reset all buttons
+    document.querySelectorAll("#step1 button").forEach(btn => {
+      btn.classList.remove("bg-black", "text-white", "border-black");
+      btn.classList.add("bg-white", "text-black", "border-gray-400");
+    });
+    
+    // Set active button
+    const activeBtn = document.getElementById("cat" + cat);
+    activeBtn.classList.remove("bg-white", "text-black", "border-gray-400");
+    activeBtn.classList.add("bg-black", "text-white", "border-black");
+    
+    updateNextButton();
+  }
+
+  // State selection
+  document.getElementById("stateSelect").addEventListener("change", (e) => {
+    selectedState = e.target.value;
+    updateNextButton();
+  });
+
+  // Engagement selection
+  function selectEngagement(type) {
+    selectedEngagement = type;
+    
+    // Reset all buttons
+    document.querySelectorAll("#step3 .step-btn").forEach(btn => {
+      btn.classList.remove("bg-black", "text-white", "border-black");
+      btn.classList.add("bg-white", "text-black", "border-gray-400");
+    });
+    
+    // Set active button
+    let activeBtnId = "";
+    if (type === "Full Time") activeBtnId = "engFull";
+    if (type === "Part Time") activeBtnId = "engPart";
+    if (type === "Hourly") activeBtnId = "engHourly";
+    
+    if (activeBtnId) {
+      const activeBtn = document.getElementById(activeBtnId);
+      activeBtn.classList.remove("bg-white", "text-black", "border-gray-400");
+      activeBtn.classList.add("bg-black", "text-white", "border-black");
+    }
+    
+    updateNextButton();
+  }
+
+  // Initialize on load
+  document.addEventListener('DOMContentLoaded', function() {
+    initTalentBrowser();
+  });
+</script>
+
+
+
+
         </main>
     </div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6682c9c59628a8235eba2fe6"
