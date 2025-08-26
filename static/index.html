@@ -2103,27 +2103,24 @@
 
           const data = bundleData[area];
 
-          let tableHTML = `
-        <p class="mb-4 text-white">${data.description}</p>
-        <table class="w-full text-left">
-            <thead class="bg-[#cbff54]">
-                <tr>
-                    <th class="px-4 py-2 text-black">Plan</th>
-                    <th class="px-4 py-2 text-black">Price</th>
-                    <th class="px-4 py-2 text-black">Effective Hourly</th>
-                </tr>
-            </thead>
-            <tbody>
-                ${data.pricing.map(p => `
-                    <tr class="group hover:bg-[#cbff54]">
-                        <td class="px-4 py-2 text-white group-hover:text-black">${p.plan}</td>
-                        <td class="px-4 py-2 text-white group-hover:text-black">${p.price}</td>
-                        <td class="px-4 py-2 text-white group-hover:text-black">${p.effective}</td>
-                    </tr>
-                `).join("")}
-            </tbody>
-        </table>
-    `;
+        let tableHTML = `
+  <p class="mb-4 text-white">${data.description}</p>
+  <form id="bundleForm">
+    ${data.pricing.map((p, index) => `
+      <div class="mb-2">
+        <label class="flex items-center cursor-pointer">
+          <input type="radio" name="plan" value="${p.plan}|${p.price}" ${index === 0 ? 'checked' : ''} class="mr-2">
+          <span class="text-white">${p.plan} — ${p.price} (${p.effective})</span>
+        </label>
+      </div>
+    `).join("")}
+    <div class="mt-4 flex gap-3">
+      <button type="button" onclick="buySelectedPlan('${data.name}')" class="px-4 py-2 rounded-xl bg-[#cbff54] text-black text-xs font-bold">Buy Now</button>
+      <button type="button" onclick="addToCart('${data.name}')" class="px-4 py-2 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs font-bold">Add to Cart</button>
+    </div>
+  </form>
+`;
+
 
           content.innerHTML = tableHTML;
           modal.classList.remove("hidden");
@@ -2142,158 +2139,254 @@
             e.currentTarget.classList.add("hidden");
           }
         });
+
+        function buySelectedPlan(serviceName) {
+  const selected = document.querySelector('input[name="plan"]:checked');
+  if (!selected) return alert("Please select a plan.");
+  
+  const [plan, price] = selected.value.split("|");
+  alert(`You selected: ${serviceName} — ${plan} for ${price}\nProceeding to checkout...`);
+  // Here you can trigger a card form popup or redirect to a checkout page
+}
+
+function addToCart(serviceName) {
+  const selected = document.querySelector('input[name="plan"]:checked');
+  if (!selected) return alert("Please select a plan.");
+  
+  const [plan, price] = selected.value.split("|");
+  alert(`Added to cart: ${serviceName} — ${plan} for ${price}`);
+  // Here you can add it to a cart array or localStorage for later checkout
+}
+
+
+let cart = [];
+
+function addToCart(serviceName) {
+  const selected = document.querySelector('input[name="plan"]:checked');
+  if (!selected) return alert("Please select a plan.");
+
+  const [plan, price] = selected.value.split("|");
+  cart.push({ service: serviceName, plan, price });
+  alert(`Added to cart: ${serviceName} — ${plan} for ${price}`);
+  console.log(cart); // for testing
+}
+
       </script>
 
 
-      <section id="delivery" class="py-20  bg-[#cbff54]">
-        <div class="max-w-7xl mx-auto px-6">
-          <!-- Header + Toggle -->
-          <div class="flex items-center justify-between flex-wrap gap-4 mb-8">
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-black">Delivery & Pricing</h2>
-            <div class="flex items-center gap-3 bg-black  rounded-sm px-2 py-1">
-              <button class="px-4 py-2 rounded-sm transition  " id="btnUSA">🇺🇸 USA</button>
-              <button class="px-4 py-2 rounded-sm transition" id="btnIndia">🇮🇳 India</button>
-            </div>
-          </div>
+     <section id="delivery" class="py-20 bg-[#cbff54]">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Header + Toggle -->
+    <div class="flex items-center justify-between flex-wrap gap-4 mb-8">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-black">Delivery & Pricing</h2>
+      <div class="flex items-center gap-3 bg-black rounded-sm px-2 py-1">
+        <button class="px-4 py-2 rounded-sm transition" id="btnUSA">🇺🇸 USA</button>
+        <button class="px-4 py-2 rounded-sm transition" id="btnIndia">🇮🇳 India</button>
+      </div>
+    </div>
 
-          <!-- Pricing Cards -->
-          <div class="mt-8 grid lg:grid-cols-3 gap-6" id="pricingCards">
-            <div class="card bg-black border rounded-2xl p-6 cursor-pointer">
-              <div class="text-sm text-gray-300">Paralegal</div>
-              <div class="text-3xl font-extrabold mt-1" id="paralegalPrice">$45–$75/hr</div>
-              <ul class="mt-4 space-y-2 text-sm text-gray-300">
-                <li>✅ Drafting, research, discovery</li>
-                <li>✅ Timezone alignment</li>
-                <li>✅ Tool proficiency: Clio, Westlaw</li>
-              </ul>
-              <button class="mt-6 w-fit px-4 py-2 rounded-sm bg-[#cbff54] text-black">Start</button>
-            </div>
-            <div class="card bg-black border rounded-2xl p-6 cursor-pointer">
-              <div class="text-sm text-gray-300">Legal VA</div>
-              <div class="text-3xl font-extrabold mt-1" id="legalVAPrice">$35–$55/hr</div>
-              <ul class="mt-4 space-y-2 text-sm text-gray-300">
-                <li>✅ Calendars, intake, docs, e-filing</li>
-                <li>✅ SLA based</li>
-                <li>✅ Tool proficiency: DocuSign, Clio</li>
-              </ul>
-              <button class="mt-6 w-fit px-4 py-2 rounded-sm bg-[#cbff54] text-black">Start</button>
-            </div>
-            <div class="card bg-black border rounded-2xl p-6 cursor-pointer">
-              <div class="text-sm text-gray-300">Legal Accounting</div>
-              <div class="text-3xl font-extrabold mt-1" id="legalAccPrice">$50–$90/hr</div>
-              <ul class="mt-4 space-y-2 text-sm text-gray-300">
-                <li>✅ Trust accounting, AR/AP</li>
-                <li>✅ QuickBooks, Xero</li>
-                <li>✅ Monthly closes & reports</li>
-              </ul>
-              <button class="mt-6 w-fit px-4 py-2 rounded-sm bg-[#cbff54] text-black">Start</button>
-            </div>
-          </div>
+    <!-- Pricing Cards -->
+    <div class="mt-8 grid lg:grid-cols-4 gap-6" id="pricingCards">
+      <!-- Paralegals Card -->
+      <div class="card flex flex-col w-full h-full items-around justify-around  bg-black border rounded-2xl p-6 cursor-pointer">
+        <div class="text-xl text-gray-300 flex items-center gap-2">Paralegals</div>
+        <ul class="mt-4 space-y-2 text-sm text-gray-300">
+          <li>Full-Time (160 hrs/month) – <span id="paralegalFull">$2,200</span></li>
+          <li>Part-Time (80 hrs/month) – <span id="paralegalPart">$1,200</span></li>
+          <li>Hourly Block (20 hrs) – <span id="paralegalHourly">$400</span></li>
+        </ul>
+        <button class="mt-6 w-fit px-4 py-2 rounded-sm bg-[#cbff54] text-black">Start</button>
+      </div>
 
-          <!-- City Selector -->
-          <div class="mt-10">
-            <div class="text-sm text-black mb-3">Preferred city</div>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4" id="citySelector">
-              <!-- Cities dynamically inserted by JS -->
-            </div>
-          </div>
-        </div>
-      </section>
+      <!-- Legal VA Card -->
+      <div class="card flex flex-col w-full h-full items-around justify-around bg-black border rounded-2xl p-6 cursor-pointer">
+        <div class="text-xl text-gray-300 flex items-center gap-2">Legal VA</div>
+        <ul class="mt-4 space-y-2 text-sm text-gray-300">
+          <li>Full-Time (160 hrs/month) – <span id="legalVAFull">$1,800</span></li>
+          <li>Part-Time (80 hrs/month) – <span id="legalVAPart">$1,000</span></li>
+          <li>Hourly Block (20 hrs) – <span id="legalVAHourly">$350</span></li>
+        </ul>
+        <button class="mt-6 w-fit px-4 py-2 rounded-sm bg-[#cbff54] text-black">Start</button>
+      </div>
 
-      <script>
-        // Delivery toggle
-        const btnUSA = document.getElementById("btnUSA");
-        const btnIndia = document.getElementById("btnIndia");
+      <!-- Bookkeepers Card -->
+      <div class="card flex flex-col w-full h-full items-around justify-around bg-black border rounded-2xl p-6 cursor-pointer">
+        <div class="text-xl text-gray-300 flex items-center gap-2">Bookkeepers</div>
+        <ul class="mt-4 space-y-2 text-sm text-gray-300">
+          <li>Full-Time (160 hrs/month) – <span id="bookFull">$1,600</span></li>
+          <li>Part-Time (80 hrs/month) – <span id="bookPart">$900</span></li>
+          <li>Hourly Block (20 hrs) – <span id="bookHourly">$300</span></li>
+        </ul>
+        <button class="mt-6 w-fit px-4 py-2 rounded-sm bg-[#cbff54] text-black">Start</button>
+      </div>
 
-        const paralegalPrice = document.getElementById("paralegalPrice");
-        const legalVAPrice = document.getElementById("legalVAPrice");
-        const legalAccPrice = document.getElementById("legalAccPrice");
+      <!-- Tax Preparers Card -->
+      <div class="card flex flex-col w-full h-full items-around justify-around bg-black border rounded-2xl p-6 cursor-pointer">
+        <div class="text-xl text-gray-300 flex items-center gap-2">Tax Preparers</div>
+        <ul class="mt-4 space-y-2 text-sm text-gray-300">
+          <li>Full-Time (160 hrs/month) – <span id="taxFull">$2,000</span></li>
+          <li>Part-Time (80 hrs/month) – <span id="taxPart">$1,100</span></li>
+          <li>Hourly Block (20 hrs) – <span id="taxHourly">$375</span></li>
+        </ul>
+        <button class="mt-6 w-fit px-4 py-2 rounded-sm bg-[#cbff54] text-black">Start</button>
+      </div>
+    </div>
 
-        const citySelector = document.getElementById("citySelector");
+    <!-- City Selector -->
+    <div class="mt-10">
+      <div class="text-sm text-black mb-3">Preferred city</div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4" id="citySelector"></div>
+    </div>
+  </div>
+</section>
 
-        const indiaCities = [
-          { name: "Bangalore", img: "https://picsum.photos/200?1" },
-          { name: "Delhi", img: "https://picsum.photos/200?2" },
-          { name: "Noida", img: "https://picsum.photos/200?3" },
-          { name: "Pune", img: "https://picsum.photos/200?4" },
-          { name: "Mumbai", img: "https://picsum.photos/200?5" }
-        ];
+<script>
+  // Delivery toggle
+  const btnUSA = document.getElementById("btnUSA");
+  const btnIndia = document.getElementById("btnIndia");
 
-        const usCities = [
-          { name: "San Francisco/Bay Area", img: "https://picsum.photos/200?6" },
-          { name: "New York City", img: "https://picsum.photos/200?7" },
-          { name: "Los Angeles", img: "https://picsum.photos/200?8" },
-          { name: "Seattle", img: "https://picsum.photos/200?9" },
-          { name: "Miami", img: "https://picsum.photos/200?10" }
-        ];
+  const paralegalFull = document.getElementById("paralegalFull");
+  const paralegalPart = document.getElementById("paralegalPart");
+  const paralegalHourly = document.getElementById("paralegalHourly");
 
-        let selectedDelivery = "USA";
+  const legalVAFull = document.getElementById("legalVAFull");
+  const legalVAPart = document.getElementById("legalVAPart");
+  const legalVAHourly = document.getElementById("legalVAHourly");
 
-        function renderCities(cities) {
-          citySelector.innerHTML = "";
-          cities.forEach(c => {
-            const btn = document.createElement("button");
-            btn.className = "relative group rounded-2xl overflow-hidden border";
-            btn.innerHTML = `
+  const bookFull = document.getElementById("bookFull");
+  const bookPart = document.getElementById("bookPart");
+  const bookHourly = document.getElementById("bookHourly");
+
+  const taxFull = document.getElementById("taxFull");
+  const taxPart = document.getElementById("taxPart");
+  const taxHourly = document.getElementById("taxHourly");
+
+  const citySelector = document.getElementById("citySelector");
+
+  const indiaCities = [
+    { name: "Bangalore", img: "https://picsum.photos/200?1" },
+    { name: "Delhi", img: "https://picsum.photos/200?2" },
+    { name: "Noida", img: "https://picsum.photos/200?3" },
+    { name: "Pune", img: "https://picsum.photos/200?4" },
+    { name: "Mumbai", img: "https://picsum.photos/200?5" }
+  ];
+
+  const usCities = [
+    { name: "San Francisco/Bay Area", img: "https://picsum.photos/200?6" },
+    { name: "New York City", img: "https://picsum.photos/200?7" },
+    { name: "Los Angeles", img: "https://picsum.photos/200?8" },
+    { name: "Seattle", img: "https://picsum.photos/200?9" },
+    { name: "Miami", img: "https://picsum.photos/200?10" }
+  ];
+
+  let selectedDelivery = "USA";
+
+  function renderCities(cities) {
+    citySelector.innerHTML = "";
+    cities.forEach(c => {
+      const btn = document.createElement("button");
+      btn.className = "relative group rounded-2xl overflow-hidden border";
+      btn.innerHTML = `
         <img src="${c.img}" alt="${c.name}" class="h-28 w-full object-cover group-hover:scale-105 transform transition"/>
         <div class="absolute inset-0 bg-black/30"></div>
         <div class="absolute bottom-2 left-2 text-white text-sm font-semibold">${c.name}</div>
         <div class="absolute top-2 right-2 text-xs px-2 py-1 rounded-full bg-white/70 text-gray-900">Select</div>
       `;
-            btn.addEventListener("click", () => {
-              Array.from(citySelector.children).forEach(ch => {
-                ch.querySelector("div:last-child").classList.replace("bg-white", "bg-white/70");
-              });
-              btn.querySelector("div:last-child").classList.replace("bg-white/70", "bg-white");
-            });
-            citySelector.appendChild(btn);
-          });
-        }
+      btn.addEventListener("click", () => {
+        Array.from(citySelector.children).forEach(ch => {
+          ch.querySelector("div:last-child").classList.replace("bg-white", "bg-white/70");
+        });
+        btn.querySelector("div:last-child").classList.replace("bg-white/70", "bg-white");
+      });
+      citySelector.appendChild(btn);
+    });
+  }
 
-        function updateDelivery(delivery) {
-          selectedDelivery = delivery;
+  function updateDelivery(delivery) {
+    selectedDelivery = delivery;
 
-          if (delivery === "USA") {
-            // USA selected → green bg, black text
-            btnUSA.classList.add("bg-[#cbff54]", "text-black");
-            btnUSA.classList.remove("bg-black", "text-white");
+    if (delivery === "USA") {
+      btnUSA.classList.add("bg-[#cbff54]", "text-black");
+      btnUSA.classList.remove("bg-black", "text-white");
+      btnIndia.classList.add("bg-black", "text-white");
+      btnIndia.classList.remove("bg-[#cbff54]", "text-black");
 
-            // India deselected → black bg, white text
-            btnIndia.classList.add("bg-black", "text-white");
-            btnIndia.classList.remove("bg-[#cbff54]", "text-black");
+      // USA pricing
+      paralegalFull.innerText = "$2,200";
+      paralegalPart.innerText = "$1,200";
+      paralegalHourly.innerText = "$400";
 
-            // Update prices
-            paralegalPrice.innerText = "$45–$75/hr";
-            legalVAPrice.innerText = "$35–$55/hr";
-            legalAccPrice.innerText = "$50–$90/hr";
+      legalVAFull.innerText = "$1,800";
+      legalVAPart.innerText = "$1,000";
+      legalVAHourly.innerText = "$350";
 
-            renderCities(usCities);
-          } else {
-            // India selected → green bg, black text
-            btnIndia.classList.add("bg-[#cbff54]", "text-black");
-            btnIndia.classList.remove("bg-black", "text-white");
+      bookFull.innerText = "$1,600";
+      bookPart.innerText = "$900";
+      bookHourly.innerText = "$300";
 
-            // USA deselected → black bg, white text
-            btnUSA.classList.add("bg-black", "text-white");
-            btnUSA.classList.remove("bg-[#cbff54]", "text-black");
+      taxFull.innerText = "$2,000";
+      taxPart.innerText = "$1,100";
+      taxHourly.innerText = "$375";
 
-            // Update prices
-            paralegalPrice.innerText = "$15–$28/hr";
-            legalVAPrice.innerText = "$10–$20/hr";
-            legalAccPrice.innerText = "$18–$35/hr";
+      renderCities(usCities);
+    } else {
+      btnIndia.classList.add("bg-[#cbff54]", "text-black");
+      btnIndia.classList.remove("bg-black", "text-white");
+      btnUSA.classList.add("bg-black", "text-white");
+      btnUSA.classList.remove("bg-[#cbff54]", "text-black");
 
-            renderCities(indiaCities);
-          }
-        }
+      // India pricing (adjust as needed)
+      paralegalFull.innerText = "$800";
+      paralegalPart.innerText = "$450";
+      paralegalHourly.innerText = "$100";
+
+      legalVAFull.innerText = "$700";
+      legalVAPart.innerText = "$400";
+      legalVAHourly.innerText = "$90";
+
+      bookFull.innerText = "$650";
+      bookPart.innerText = "$350";
+      bookHourly.innerText = "$80";
+
+      taxFull.innerText = "$900";
+      taxPart.innerText = "$500";
+      taxHourly.innerText = "$110";
+
+      renderCities(indiaCities);
+    }
+  }
+
+  btnUSA.addEventListener("click", () => updateDelivery("USA"));
+  btnIndia.addEventListener("click", () => updateDelivery("India"));
+
+  // Initial render
+  updateDelivery(selectedDelivery);
+</script>
+<section id="tools" class="py-20 bg-[#cbff54]">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-black">Tools Our Teams Work On</h2>
+    <p class="text-gray-600 mt-2">Paralegals • Legal VAs • Accountants</p>
+    
+    <div class="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 items-center justify-center">
+      <img class="h-12 mx-auto object-contain mix-blend-multiply" src="https://mma.prnewswire.com/media/2466427/Clio_Clio_announces_US__900M_investment_at_US__3B_valuation_to_t.jpg?p=facebook" alt="Clio" title="Clio" />
+      <img class="h-12 mx-auto object-contain" src="https://play-lh.googleusercontent.com/cpWWXw2JsaYyfXjRUKihik-5ImKjHvZli02k9GLTnMFGzLOvICoSkU8wCGJQ19dgnHnH" alt="Westlaw" title="Westlaw" />
+      <img class="h-12 mx-auto object-contain" src="https://upload.wikimedia.org/wikipedia/commons/b/bf/LexisNexis_logo.svg" alt="LexisNexis" title="LexisNexis" />
+      <img class="h-12 mx-auto object-contain mix-blend-multiply" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtSoysdIpuMCbqJa25OXZJgQIJifT7zfBRGA&s" alt="Relativity" title="Relativity" />
+      <img class="h-12 mx-auto object-contain" src="https://cdn.worldvectorlogo.com/logos/quickbooks-2.svg" alt="QuickBooks" title="QuickBooks" />
+      <img class="h-12 mx-auto object-contain mix-blend-multiply" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7yut9wR-XrWvwUnzEXssZ0PXWdy-2U_sn1Q&s" alt="DocuSign" title="DocuSign" />
+      <img class="h-12 mx-auto object-contain" src="https://upload.wikimedia.org/wikipedia/commons/3/38/Filevine_Company_Logo.png" alt="Filevine" title="Filevine" />
+      <img class="h-12 mx-auto object-contain mix-blend-multiply" src="https://cdn.prod.website-files.com/64e7a19b488adcdfce860233/6733a0321583cac79bf1f334_CASEpeer%20logo.png" alt="Casepeer" title="Casepeer" />
+      <img class="h-12 mx-auto object-contain" src="https://i0.wp.com/wealthcounsel.in/wp-content/uploads/2022/01/cropped-Logo-Wealthcounsel.png?fit=711%2C219&ssl=1" alt="WealthCounsel" title="WealthCounsel" />
+      <img class="h-12 mx-auto object-contain" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0rZ1XFZh80Z6d5twF8LubQdq6HPAQq1Gmng&s" alt="PracticePanther" title="PracticePanther" />
+      <img class="h-12 mx-auto object-contain mix-blend-multiply" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCVjNlBln2DFZH5GvWALSZVy2ZpRdYx54_IQ&s" alt="Smokeball" title="Smokeball" />
+      <img class="h-12 mx-auto object-contain mix-blend-multiply" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi5RxVh7s6yzT1viIJR7zACyy2mJQIM4x3Cw&s" alt="Rocket Matter" title="Rocket Matter" />
+      <img class="h-12 mx-auto object-contain mix-blend-multiply" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjhjvPuB6C3C-LVlSVZ-fqqirMuMTaWn1D_A&s" alt="Bill4Time" title="Bill4Time" />
+      <img class="h-12 mx-auto object-contain" src="https://helpsquad.com/wp-content/uploads/2022/08/zola-suite.webp" alt="Zola Suite" title="Zola Suite" />
+    </div>
+  </div>
+</section>
 
 
-
-        btnUSA.addEventListener("click", () => updateDelivery("USA"));
-        btnIndia.addEventListener("click", () => updateDelivery("India"));
-
-        // Initial render
-        updateDelivery(selectedDelivery);
-      </script>
 
       <section id="gcc" class="relative overflow-hidden bg-[#cbff54] text-black">
         <!-- Video background (optional) -->
@@ -2627,8 +2720,13 @@
                         <div class="flex justify-between text-sm mt-2">
                           <span>⭐ 4.9</span><span>$35-45/hr</span>
                         </div>
-                        <button class="mt-2 px-4 py-2 bg-[#cbff54] text-black rounded-lg font-medium">Schedule
+                        <div class="flex flex-col justify-start items-start gap-2 mt-4">
+                                <button class="mt-2 px-4 py-2 bg-[#cbff54] text-black rounded-sm font-medium">Download Resume </button>
+                        <button class="mt-2 px-4 py-2 bg-[#cbff54] text-black rounded-sm font-medium">Download Sample Work</button>
+                        <button class="mt-2 px-4 py-2 bg-[#cbff54] text-black rounded-sm font-medium">Schedule
                           Meeting</button>
+                        </div>
+                    
                       </div>
                     </div>
 
@@ -2649,8 +2747,13 @@
                         <div class="flex justify-between text-sm mt-2">
                           <span>⭐ 4.8</span><span>$30-40/hr</span>
                         </div>
-                        <button class="mt-2 px-4 py-2 bg-[#cbff54] text-black rounded-lg font-medium">Schedule
+                       <div class="flex flex-col justify-start items-start gap-2 mt-4">
+                                <button class="mt-2 px-4 py-2 bg-[#cbff54] text-black rounded-sm font-medium">Download Resume </button>
+                        <button class="mt-2 px-4 py-2 bg-[#cbff54] text-black rounded-sm font-medium">Download Sample Work</button>
+                        <button class="mt-2 px-4 py-2 bg-[#cbff54] text-black rounded-sm font-medium">Schedule
                           Meeting</button>
+                        </div>
+                    
                       </div>
                     </div>
 
