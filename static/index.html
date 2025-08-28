@@ -1246,6 +1246,27 @@
                 solutions
                 powered by expert paralegals, virtual assistants, and bookkeepers, delivered
                 cost-effectively from India or premium from the USA.</p>
+
+
+                <div class="flex mt-8 gap-4">
+                    <a data-button-color="" aria-label="staggering button" href="#services"
+                class="btn-animate-chars nav-btn w-inline-block">
+                <div class="btn-animate-chars__bg nav-btn"></div>
+                <span data-button-animate-chars="" class="btn-animate-chars__text nav-btn"
+                  style="font-family: 'Poppins';  font-size: x-large;">Explore Services</span>
+
+
+
+              </a>
+              <a data-button-color="" aria-label="staggering button" href="#"
+                class="btn-animate-chars nav-btn w-inline-block">
+                <div class="btn-animate-chars__bg nav-btn"></div>
+                <span data-button-animate-chars="" class="btn-animate-chars__text nav-btn"
+                  style="font-family: Poppins; font-size: x-large; " onclick="openTalentBrowser()">Browse Talent</span>
+              </a>
+
+                </div>
+                   
             </div>
             <div class="gallery-masthead_marquee-wrapper">
               <div data-marquee-duplicate="2" data-marquee-scroll-direction-target="" data-marquee-direction="right"
@@ -1381,6 +1402,10 @@
             <button onclick="showPanel('immigration')"
               class="px-4 py-2 rounded-sm bg-[#112220cc] text-white text-xs font-semibold  uppercase hover:bg-gray-800 tracking-widest">
               Immigration
+            </button>
+            <button onclick="showPanel('bankruptcy')"
+              class="px-4 py-2 rounded-sm bg-[#112220cc] text-white text-xs font-semibold  uppercase hover:bg-gray-800 tracking-widest">
+              Bankruptcy
             </button>
             <button onclick="showPanel('accounting')"
               class="px-4 py-2 rounded-sm bg-[#112220cc] text-white text-xs font-semibold  uppercase hover:bg-gray-800 tracking-widest">
@@ -1642,6 +1667,44 @@
               </div>
             </div>
 
+            <!-- Bankruptcy -->
+<div id="panel-bankruptcy" class="hidden bg-black text-white p-8 rounded-xl">
+  <div class="grid md:grid-cols-2 gap-8 items-center">
+    <div>
+      <h3 class="text-xl font-bold mb-3">
+        Bankruptcy Law — Chapter 7 & 13 filings, simplified.
+      </h3>
+      <p class="mb-4 text-slate-200">
+        We manage the paperwork mountain—means tests, petitions, creditor lists—so you can focus on client relief.
+      </p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Chapter 7 & 13 petition preparation</li>
+        <li>Means test calculations & analysis</li>
+        <li>Creditor matrix & noticing</li>
+        <li>Schedules & statement of financial affairs</li>
+      </ul>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="#cta" class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs hover:bg-lime-300">
+          Simplify Bankruptcy Filings
+        </a>
+        <a onclick="showBundle('bankruptcy')"
+          class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">
+          View Bankruptcy Bundle
+        </a>
+        <a href="#bundles"
+          class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">
+          Buy Now
+        </a>
+      </div>
+    </div>
+    <div>
+      <img src="https://www.brentgeorgelaw.com/wp-content/uploads/2025/01/January-2025-Luxury-Assets-in-Bankruptcy-Featured.jpg"
+        alt="Bankruptcy Services" class="rounded-lg shadow-lg" />
+    </div>
+  </div>
+</div>
+
+
             <!-- Accounting -->
             <div id="panel-accounting" class="hidden bg-black text-white p-8 rounded-xl">
               <div class="grid md:grid-cols-2 gap-8 items-center">
@@ -1661,7 +1724,7 @@
                     <a href="#cta" class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs hover:bg-lime-300">
                       Get Accounting Support
                     </a>
-                    <a href="#bundles"
+                    <a onclick="showBundle('accounting')"
                       class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">
                       View Accounting Bundle
                     </a>
@@ -1698,7 +1761,7 @@
                     <a href="#cta" class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs hover:bg-lime-300">
                       Simplify Bookkeeping
                     </a>
-                    <a href="#bundles"
+                     <a onclick="showBundle('bookkeeping')"
                       class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">
                       View Bookkeeping Bundle
                     </a>
@@ -1735,7 +1798,7 @@
                     <a href="#cta" class="px-5 py-3 rounded-xl bg-[#cbff54] text-black text-xs hover:bg-lime-300">
                       File Taxes Stress-Free
                     </a>
-                    <a href="#bundles"
+                      <a onclick="showBundle('tax')"
                       class="px-5 py-3 rounded-xl border border-[#cbff54] text-[#cbff54] text-xs hover:bg-[#cbff54] hover:text-black">
                       View Tax Bundle
                     </a>
@@ -2093,7 +2156,48 @@
               { plan: "Premium (160 hrs/mo)", price: "$1,760", effective: "$11 → $7.5/hr" },
               { plan: "Enterprise (Custom hrs)", price: "Custom Pricing", effective: "$11 → $7.5/hr" },
             ]
+          },
+          tax: {
+            name: "Tax Preparation",
+            description: "Individual & business tax returns, tax planning, IRS correspondence, quarterly estimates",
+            pricing: [
+              { plan: "Basic (40 hrs/mo)", price: "$440", effective: "$11 → $7.5/hr" },
+              { plan: "Standard (80 hrs/mo)", price: "$960", effective: "$11 → $7.5/hr" },
+              { plan: "Premium (160 hrs/mo)", price: "$1,760", effective: "$11 → $7.5/hr" },
+              { plan: "Enterprise (Custom hrs)", price: "Custom Pricing", effective: "$11 → $7.5/hr" },
+            ]
+          },
+          bookkeeping: {
+            name: "Bookkeeping",
+            description: "Bank reconciliation, accounts payable/receivable, payroll processing, financial statement generation",
+            pricing: [
+              { plan: "Basic (40 hrs/mo)", price: "$400", effective: "$10 → $7/hr" },
+              { plan: "Standard (80 hrs/mo)", price: "$880", effective: "$10 → $7/hr" },
+              { plan: "Premium (160 hrs/mo)", price: "$1,640", effective: "$10 → $7/hr" },
+              { plan: "Enterprise (Custom hrs)", price: "Custom Pricing", effective: "$10 → $7/hr" },
+            ]
+          },
+          accounting: {
+            name: "Accounting",
+            description: "Financial analysis, budget forecasting, internal audits, management accounting, compliance reporting",
+            pricing: [
+              { plan: "Basic (40 hrs/mo)", price: "$480", effective: "$12 → $8/hr" },
+              { plan: "Standard (80 hrs/mo)", price: "$1,080", effective: "$12 → $8/hr" },
+              { plan: "Premium (160 hrs/mo)", price: "$1,920", effective: "$12 → $8/hr" },
+              { plan: "Enterprise (Custom hrs)", price: "Custom Pricing", effective: "$12 → $8/hr" },
+            ]
+          },
+          bankruptcy: {
+            name: "Bankruptcy Law",
+            description: "Chapter 7 & 13 petition prep, means test calculation, creditor matrix filing, document management",
+            pricing: [
+              { plan: "Basic (40 hrs/mo)", price: "$460", effective: "$11.5 → $7.5/hr" },
+              { plan: "Standard (80 hrs/mo)", price: "$1,000", effective: "$11.5 → $7.5/hr" },
+              { plan: "Premium (160 hrs/mo)", price: "$1,800", effective: "$11.5 → $7.5/hr" },
+              { plan: "Enterprise (Custom hrs)", price: "Custom Pricing", effective: "$11.5 → $7.5/hr" },
+            ]
           }
+
         };
 
         // Open Modal & Inject Pricing
